@@ -14,7 +14,7 @@ class Navbar extends Component {
                     <div className='tpa-navbar-nav-menu'>
                         <a to='/' className='tpa-navbar-logo tpa-navbar-nav-menu-item'>
                             <span className='tpa-navbar-nav-menu-item-icon -danger'>
-                                saturn
+                                <i className='tpa-icon -saturn' />
                             </span>
                             <span>AOTM<b> Aug '17</b></span>
                         </a>

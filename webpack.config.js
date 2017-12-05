@@ -64,6 +64,10 @@ module.exports = {
                     path.resolve(__dirname, "node_modules"),
                 ],
                 loader: "babel-loader"
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2|png|gif|mp4)$/,
+                loader: "file-loader"
             }
         ]
     },
