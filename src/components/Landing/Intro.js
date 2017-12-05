@@ -24,7 +24,7 @@ class Intro extends Component {
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-inner'>
-                          <i className='ios tpa-icon'></i>
+                          <i className='-apple tpa-icon'></i>
                           <span>Free</span>
                         </div>
                       </a>
