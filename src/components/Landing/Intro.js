@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import IntroRating from 'src/components/IntroRating';
-import LikeButton from 'src/components/LikeButton';
+import ButtonSet from 'src/components/ButtonSet';
 
 class Intro extends Component {
     render() {
@@ -29,16 +29,7 @@ class Intro extends Component {
                         </div>
                       </a>
                   </div>
-                  <div className='tpa-intro-actions -right'>
-                      <button className='tpa-btn_transparent'>
-                          <div className='tpa-btn_transparent-hover'></div>
-                          <div className='tpa-btn_transparent-hover'></div>
-                          <div className='tpa-btn_transparent-inner -square'>
-                              <i className='tpa-icon -share'></i>
-                          </div>
-                      </button>
-                      <LikeButton />
-                  </div>
+                  <ButtonSet />
 
                   <div className='tpa-intro-container'>
                       <div className='tpa-intro-wrap'>
