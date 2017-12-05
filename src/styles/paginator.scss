@@ -1,0 +1,47 @@
+.tpa-paginator {
+
+    &-item {
+        position:relative;
+        display:inline-block;
+        padding:0 13px;
+        height:50px;
+        min-width:45px;
+
+        color:$color-text;
+        background:$color-base;
+        border-right:1px #F2F2F2 solid;
+
+        font-family:$font-family;
+        font-size:15px;
+        font-weight:300;
+        letter-spacing:0.94px;
+        line-height:50px;
+        text-align:center;
+
+        transition:background 0.1s;
+
+        &:hover, &:focus {
+            background:$color-fill;
+            color:inherit;
+            text-decoration:none;
+        }
+
+        &:last-child {
+            border:0;
+        }
+
+        &.-prev, &.-next {
+            font-size:10px;
+        }
+
+        &.-active {
+            font-weight:bold;
+            text-decoration:line-through;
+        }
+
+        &.-disabled {
+            opacity:0.5;
+            pointer-events:none;
+        }
+    }
+}

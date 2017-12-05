@@ -1,0 +1,100 @@
+.tpa-topbar {
+    height:60px;
+    line-height:43px;
+
+    background:$color-base;
+
+    &-outer {
+        padding-top: 60px;
+        height:100%;
+    }
+
+    &-nav {
+        display: table;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+
+        &-col {
+            display: table-cell;
+            vertical-align: middle;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            span {
+                vertical-align: middle;
+            }
+
+            a {
+                text-decoration: none;
+                vertical-align: middle;
+
+                .tpa-icon.-arrow-left {
+                    color: #b5b5b5;
+                    font-weight: bolder;
+                    margin-right: 15px;
+                    font-size: 12px;
+                    vertical-align: middle;
+                }
+
+                &.danger {
+                    color: $color-error;
+                }
+            }
+
+            &.right {
+                text-align: right;
+            }
+        }
+
+        &-item {
+            position:relative;
+            margin:0 13px;
+
+            opacity:0.5;
+            font-size:14px;
+            font-weight:600;
+
+            transition:all 0.2s;
+
+            &:after {
+                content:"";
+                display:block;
+                position:absolute;
+                left:0;
+                bottom:-14px;
+                width:0;
+
+                border-bottom:4px $color-primary solid;
+
+                transition:all 0.2s;
+            }
+
+            &:hover, &:focus {
+                opacity:1;
+                text-decoration:none;
+            }
+
+            &:active {
+                opacity:0.8;
+            }
+
+            &.-active {
+                opacity:1;
+
+                &:after {
+                    width:18px;
+                }
+            }
+        }
+    }
+
+    &.-absolute {
+        position:fixed;
+        left:0;
+        right:0;
+        z-index: 1;
+        max-width: $screen-max;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,89 @@
+.tpa-alertbox {
+    position: absolute;
+    display:table;
+    width:100%;
+    height:100%;
+    background-color: $color-fill;
+
+    &-modal {
+        position: relative;
+        display:table;
+        width:100%;
+        height:100%;
+    }
+
+    &-inner {
+        display:table-cell;
+        height:100%;
+        padding:30px;
+        vertical-align:middle;
+        text-align:center;
+    }
+
+    &-icon {
+        margin:0 0 25px 0;
+
+        .warning {
+            position: relative;
+            display: inline-block;
+            height: 54px;
+            width: 54px;
+
+            .mask {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 54px;
+                height: 54px;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                background-color: $color-fill;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .bang {
+                position: absolute;
+                display: inline-block;
+                top: 50%;
+                left: 50%;
+                margin-top: -12.5px;
+                margin-left: -5px;
+                font-size: 34px;
+                line-height: 25px;
+                color: $color-primary;
+            }
+        }
+    }
+
+    &-title {
+        font-family:$font-family-secondary;
+        font-weight:bold;
+        font-size:24px;
+        letter-spacing:0;
+    }
+
+    &-text {
+        margin:12px 0 0 0;
+
+        font-family:$font-family-third;
+        font-size:14px;
+        letter-spacing:-0.4px;
+        line-height:23px;
+    }
+
+    &-actions {
+        margin:10px 0 0 0;
+
+        a {
+            margin-top: 10px;
+        }
+    }
+
+    &.drawer {
+        position: relative;
+        background-color: $color-primary;
+        color: $color-base;
+    }
+}

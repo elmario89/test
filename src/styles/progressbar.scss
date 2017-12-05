@@ -1,0 +1,68 @@
+.tpa-progressbar {
+
+    &_circle {
+        display:inline-block;
+        vertical-align:middle;
+        transform:rotate(-90deg);
+
+        svg {
+            display:inline-block;
+            width:20px;
+            height:20px;
+            fill:none;
+            stroke:$color-disabled;
+            stroke-width:3px;
+
+
+            circle {
+                transition:all 0.5s;
+
+                &.-grey {
+                    stroke:lighten($color-text, 30%);
+                }
+
+                &:nth-child(2) {
+                    stroke:$color-primary;
+
+                    &.-white {
+                        stroke:$color-base;
+                    }
+                }
+            }
+        }
+
+        &.-xs {
+            svg {
+                height:14px;
+                width:14px;
+                stroke-width:1.5px;
+
+                circle {
+                    stroke-dasharray:37.7px;
+                }
+            }
+
+            &.-animate {
+                svg {
+                    circle:nth-child(2) {
+                        transition:all 0s !important;
+                        stroke-dashoffset:37.7px !important;
+                    }
+                }
+            }
+        }
+
+        &.-sm {
+            svg {
+                height:18px;
+                width:18px;
+                stroke-width:1.8px;
+
+                circle {
+                    stroke-dasharray:43.92px;
+                }
+            }
+        }
+    }
+
+}

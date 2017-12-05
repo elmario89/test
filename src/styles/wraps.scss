@@ -1,0 +1,48 @@
+.tpa-wrap {
+    height:100%;
+}
+
+.tpa-content {
+    height:100%;
+    overflow:auto;
+    -webkit-overflow-scrolling:touch;
+
+    &.-screens {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        overflow: hidden;
+
+        @media (min-width:600px) {
+            width: 600px;
+            left: 50%;
+            margin-left: -300px;
+            height: 100vh;
+        }
+    }
+}
+
+.tpa-container {
+    padding:0 20px;
+
+    /* Due catalog used */
+    &-inner {
+        position: relative;
+
+        @media (min-width:$screen-xs-min) {
+            padding:0 (30px - 20px);
+        }
+
+        @media (min-width:$screen-md-min) {
+            padding:0 (45px - 20px);
+        }
+
+        @media (min-width:$screen-lg-min) {
+            padding:0 (100px - 20px);
+        }
+    }
+}
+
+//.app-view {
+//    min-height: 100%;
+//}

@@ -1,0 +1,55 @@
+.tpa-sprite {
+    display:inline-block;
+    background-image: url(./assets/img/sprites/sprites.png);
+    background-repeat: no-repeat;
+    &.-award-aotd {
+        background-position: -254px 0px;
+        width: 63px;
+        height: 63px;
+    }
+    &.-cuberto {
+        background-position: 0px -198px;
+        width: 130px;
+        height: 11px;
+    }
+    &.-logo-cuberto {
+        background-position: 0px -167px;
+        width: 181px;
+        height: 30px;
+    }
+    &.-logo-secondary {
+        background-position: 0px 0px;
+        width: 86px;
+        height: 86px;
+    }
+    &.-logo {
+        background-position: -87px 0px;
+        width: 86px;
+        height: 86px;
+    }
+    &.-state-empty {
+        background-position: 0px -87px;
+        width: 79px;
+        height: 79px;
+    }
+    &.-state-error {
+        background-position: -80px -87px;
+        width: 79px;
+        height: 79px;
+    }
+    &.-state-like {
+        background-position: -174px -80px;
+        width: 77px;
+        height: 77px;
+    }
+    &.-state-success {
+        background-position: -174px 0px;
+        width: 79px;
+        height: 79px;
+    }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url(./assets/img/sprites/sprites@2x.png);
+            background-size: 317px 209px;
+        }
+}

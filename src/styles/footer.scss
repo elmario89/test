@@ -1,0 +1,207 @@
+.tpa-footer {
+    $root:&;
+    color:$color-text;
+
+    &.-press {
+        display:table-row;
+        height:calc(142px + 40px);
+
+        margin:0 0 69px 0;
+
+        @media (min-width:$screen-sm-min) {
+            margin:0;
+        }
+
+        #{$root} {
+            &-wrap {
+                background:$color-base;
+                position:absolute;
+                bottom:0;
+
+                width:100%;
+                height:142px;
+            }
+        }
+    }
+
+    &.-inverse {
+        background:$color-fill;
+    }
+
+    &-container {
+        margin:0 20px;
+
+        @media (min-width:$screen-sm-min) {
+            margin:0 40px;
+            width:initial;
+        }
+
+        @media (min-width:$screen-lg-min) {
+            margin:0 60px;
+        }
+
+        @media (min-width:$screen-xl-min) {
+            margin:0 100px;
+        }
+    }
+
+    &-inner {
+        padding:25px 0 80px;
+        width:100%;
+
+        @media (min-width:$screen-sm-min) {
+            display:table;
+            padding:41px 0;
+        }
+    }
+
+    &-col {
+        display:block;
+
+        @media (min-width:$screen-sm-min) {
+            display:table-cell;
+            vertical-align:top;
+        }
+
+        &.-right {
+            @media (min-width:$screen-sm-min) {
+                text-align:right;
+            }
+        }
+    }
+
+    &-links {
+        display:block;
+
+        &-item {
+            position:relative;
+            display:inline-block;
+            vertical-align:middle;
+            margin:0 23px 13px 0;
+
+            font-family:$font-family-secondary;
+            font-size:14px;
+            letter-spacing:0.88px;
+            line-height:22.08px;
+            text-transform:uppercase;
+
+            color:$color-text;
+
+            transition:.2s;
+
+            overflow:hidden;
+
+            &:last-child {
+                margin:0 0 13px 0;
+            }
+
+            &:hover {
+                opacity:0.8;
+                text-decoration:none;
+
+                .tpa-footer-links-item-inner {
+                    top:-22px;
+                }
+            }
+
+            &:after {
+                content:'';
+                position:absolute;
+                left:0;
+                top:12px;
+                background:$color-text;
+                width:0;
+                height:1px;
+
+                transition:.2s;
+            }
+
+            @media (min-width:$screen-sm-min) {
+                margin:0 24px 13px 0;
+            }
+
+            @media (min-width:$screen-md-min) {
+                margin:0 28px 13px 0;
+            }
+
+            i {
+                display:inline-block;
+                vertical-align:middle;
+
+                font-size:15px;
+                margin:0 10px 0 0;
+
+                &:last-child {
+                    margin:0;
+                }
+
+                &.-twitter {
+                    font-size:13px;
+                }
+            }
+
+            span {
+                display:none;
+
+                @media (min-width:$screen-md-min) {
+                    display:inline-block;
+                    vertical-align:middle;
+                }
+            }
+
+            &-inner {
+                position:relative;
+                top:0px;
+                transition:top .2s;
+
+                &-rel {
+                    position:relative;
+                }
+
+                &-abs {
+                    position:absolute;
+                }
+            }
+        }
+    }
+
+    &-copy {
+        display:inline-block;
+
+        font-size:14px;
+        letter-spacing:0.49px;
+        line-height:24px;
+
+        color:$color-muted;
+    }
+
+    &-dev {
+        &-text {
+            font-size:14px;
+            letter-spacing:0.49px;
+            line-height:24px;
+
+            color:$color-muted;
+
+            display:inline-block;
+            vertical-align:middle;
+
+            margin:0 10px 0 0;
+        }
+
+        &-logo {
+            display:inline-block;
+            vertical-align:middle;
+        }
+    }
+}
+
+@keyframes tpa-footer-links-item-active {
+    from {
+        width:0;
+    }
+
+    to {
+        width:100%;
+    }
+}

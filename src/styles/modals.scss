@@ -1,0 +1,287 @@
+.tpa-modal {
+    $root: &;
+
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    //width: 100%;
+    //height: 100%;
+    //top: 0px;
+    //left: 0px;
+    z-index: 1100;
+    //display: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: center;
+    outline: 0;
+
+    &:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
+
+    &-backdrop{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000;
+        opacity: 0.5;
+        transition: opacity 0.15s linear;
+    }
+
+    &.-success {
+        padding: 0 0 0 0 !important;
+
+        &:before {
+            display: none;
+        }
+
+        .tpa-material-head-title {
+            margin: 0 0 0 0;
+
+            &-caption {
+                font-family: $font-family-secondary;
+            }
+        }
+
+        #{$root} {
+
+            &-body {
+                padding: 30px 20px 0 20px;
+
+                @media(min-width: 840px) {
+                    padding: 49px 40px 0 40px;
+                }
+            }
+
+            &-footer {
+                text-align: center;
+
+                @media(min-width: 840px) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &-outer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        display: table;
+    }
+
+    &-inner {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &-modal-close {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+    }
+
+    &-dialog {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
+        vertical-align: middle;
+        z-index:1050;
+
+        &.-bottom{
+            vertical-align: bottom;
+            bottom: 20px;
+        }
+
+        @media (min-width: 320px) {
+            max-width: 320px;
+        }
+
+        @media (min-width: 840px) {
+            max-width: 840px;
+        }
+
+        &.-sm {
+            max-width: 458px;
+        }
+    }
+
+    &-content {
+        position: relative;
+        overflow: hidden;
+
+        background: #fff;
+    }
+
+    &-header {
+        display: table;
+        width: 100%;
+        margin: 40px 0 -15px 0;
+
+        &-title {
+            display: table-cell;
+            padding-left: 40px;
+            font-family: $font-family-secondary;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 0;
+            vertical-align: middle;
+        }
+
+        &-actions {
+            display: table-cell;
+            padding-right: 40px;
+            vertical-align: middle;
+
+            font-size: 16px;
+            letter-spacing: 0.27px;
+            line-height: 23px;
+            text-align: right;
+
+            a {
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+            }
+
+            > a {
+                color: $color-smooth;
+                font-size: 12px;
+                transition: color 0.2s;
+
+                &:hover, &:focus {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+
+    &-wrap {
+        padding: 40px 0;
+    }
+
+    &-footer {
+        margin: 30px 0 40px 0;
+        text-align: right;
+    }
+
+    &-container {
+        padding: 0 40px;
+
+        &.-success {
+
+            .tpa-btn_primary {
+                width: inherit;
+            }
+        }
+    }
+
+    &-alert {
+        color: $color-disabled;
+
+        &-sprite {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        &-icon {
+            display: table;
+            width: 106px;
+            height: 106px;
+            margin: 30px auto;
+
+            border: 2px $color-disabled solid;
+            border-radius: 100%;
+
+            font-size: 28px;
+
+            i {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+
+        &.-success &-icon {
+            border-color: $color-success;
+            color: $color-success;
+        }
+
+        &.-error &-icon {
+            border-color: $color-error;
+            color: $color-error;
+        }
+
+        &-text {
+            margin: 30px auto;
+
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 21px;
+            text-align: center;
+
+            h1, h2, h3, h4, h5 {
+                padding: 0;
+                margin: 0 0 7px 0;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            p {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    &-heading {
+        font-size: 16px;
+        letter-spacing: 0;
+
+        h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        &-col {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &-middleheader {
+        height: 45px;
+        margin: 0 -20px;
+        padding: 0 20px;
+
+        background: $color-fill;
+        color: $color-smooth;
+
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 1.03px;
+        line-height: 45px;
+        text-transform: uppercase;
+    }
+}

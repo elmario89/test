@@ -1,0 +1,370 @@
+@font-face {
+    font-family: "tappawards-icons";
+    src: url('./assets/fonts/icons/tappawards-icons.eot');
+    src: url('./assets/fonts/icons/tappawards-icons.eot?#iefix') format('eot'),
+    //url('./assets/fonts/icons/tappawards-icons.woff2') format('woff2'),
+    url('./assets/fonts/icons/tappawards-icons.woff') format('woff'),
+    url('./assets/fonts/icons/tappawards-icons.ttf') format('truetype');
+    //url('./assets/fonts/icons/tappawards-icons.svg#tappawards-icons') format('svg');
+}
+
+@mixin icon-styles {
+    font-family: "tappawards-icons";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+    text-decoration: none;
+    text-transform: none;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tpa-icon {
+    @include icon-styles;
+}
+
+@function icon-char($filename) {
+    $char: "";
+    
+    @if $filename == aotd {
+        $char: "\E001";
+    }
+    @if $filename == apple {
+        $char: "\E002";
+    }
+    @if $filename == arrow-down {
+        $char: "\E003";
+    }
+    @if $filename == arrow-left {
+        $char: "\E004";
+    }
+    @if $filename == arrow-right {
+        $char: "\E005";
+    }
+    @if $filename == arrow-up {
+        $char: "\E006";
+    }
+    @if $filename == bell {
+        $char: "\E007";
+    }
+    @if $filename == calendar {
+        $char: "\E008";
+    }
+    @if $filename == caret-down {
+        $char: "\E009";
+    }
+    @if $filename == caret-left {
+        $char: "\E00A";
+    }
+    @if $filename == caret-right {
+        $char: "\E00B";
+    }
+    @if $filename == caret-up {
+        $char: "\E00C";
+    }
+    @if $filename == check-bold {
+        $char: "\E00D";
+    }
+    @if $filename == check-thin {
+        $char: "\E00E";
+    }
+    @if $filename == check {
+        $char: "\E00F";
+    }
+    @if $filename == chevron-down {
+        $char: "\E010";
+    }
+    @if $filename == chevron-left {
+        $char: "\E011";
+    }
+    @if $filename == chevron-right {
+        $char: "\E012";
+    }
+    @if $filename == chevron-up {
+        $char: "\E013";
+    }
+    @if $filename == clock {
+        $char: "\E014";
+    }
+    @if $filename == clone {
+        $char: "\E015";
+    }
+    @if $filename == cog {
+        $char: "\E016";
+    }
+    @if $filename == copy-2 {
+        $char: "\E017";
+    }
+    @if $filename == cup {
+        $char: "\E018";
+    }
+    @if $filename == dots {
+        $char: "\E019";
+    }
+    @if $filename == edit {
+        $char: "\E01A";
+    }
+    @if $filename == envelope {
+        $char: "\E01B";
+    }
+    @if $filename == exit {
+        $char: "\E01C";
+    }
+    @if $filename == facebook {
+        $char: "\E01D";
+    }
+    @if $filename == google-play {
+        $char: "\E01E";
+    }
+    @if $filename == google-plus {
+        $char: "\E01F";
+    }
+    @if $filename == heart-filled {
+        $char: "\E020";
+    }
+    @if $filename == heart {
+        $char: "\E021";
+    }
+    @if $filename == home {
+        $char: "\E022";
+    }
+    @if $filename == ic_fb {
+        $char: "\E023";
+    }
+    @if $filename == ic_tw {
+        $char: "\E024";
+    }
+    @if $filename == link {
+        $char: "\E025";
+    }
+    @if $filename == long-arrow-down {
+        $char: "\E026";
+    }
+    @if $filename == long-arrow-left {
+        $char: "\E027";
+    }
+    @if $filename == long-arrow-right {
+        $char: "\E028";
+    }
+    @if $filename == long-arrow-up {
+        $char: "\E029";
+    }
+    @if $filename == nominee {
+        $char: "\E02A";
+    }
+    @if $filename == pencil {
+        $char: "\E02B";
+    }
+    @if $filename == plus {
+        $char: "\E02C";
+    }
+    @if $filename == refresh {
+        $char: "\E02D";
+    }
+    @if $filename == saturn {
+        $char: "\E02E";
+    }
+    @if $filename == share-2 {
+        $char: "\E02F";
+    }
+    @if $filename == share {
+        $char: "\E030";
+    }
+    @if $filename == star {
+        $char: "\E031";
+    }
+    @if $filename == times-thin {
+        $char: "\E032";
+    }
+    @if $filename == times {
+        $char: "\E033";
+    }
+    @if $filename == twitter {
+        $char: "\E034";
+    }
+    @if $filename == upload {
+        $char: "\E035";
+    }
+    @if $filename == user {
+        $char: "\E036";
+    }
+    @if $filename == vk {
+        $char: "\E037";
+    }
+
+    @return $char;
+}
+
+@mixin icon($filename, $insert: before) {
+    &:#{$insert} {
+        content: icon-char($filename);
+    }
+}
+
+.tpa-icon.-aotd {
+    @include icon(aotd);
+}
+.tpa-icon.-apple {
+    @include icon(apple);
+}
+.tpa-icon.-arrow-down {
+    @include icon(arrow-down);
+}
+.tpa-icon.-arrow-left {
+    @include icon(arrow-left);
+}
+.tpa-icon.-arrow-right {
+    @include icon(arrow-right);
+}
+.tpa-icon.-arrow-up {
+    @include icon(arrow-up);
+}
+.tpa-icon.-bell {
+    @include icon(bell);
+}
+.tpa-icon.-calendar {
+    @include icon(calendar);
+}
+.tpa-icon.-caret-down {
+    @include icon(caret-down);
+}
+.tpa-icon.-caret-left {
+    @include icon(caret-left);
+}
+.tpa-icon.-caret-right {
+    @include icon(caret-right);
+}
+.tpa-icon.-caret-up {
+    @include icon(caret-up);
+}
+.tpa-icon.-check-bold {
+    @include icon(check-bold);
+}
+.tpa-icon.-check-thin {
+    @include icon(check-thin);
+}
+.tpa-icon.-check {
+    @include icon(check);
+}
+.tpa-icon.-chevron-down {
+    @include icon(chevron-down);
+}
+.tpa-icon.-chevron-left {
+    @include icon(chevron-left);
+}
+.tpa-icon.-chevron-right {
+    @include icon(chevron-right);
+}
+.tpa-icon.-chevron-up {
+    @include icon(chevron-up);
+}
+.tpa-icon.-clock {
+    @include icon(clock);
+}
+.tpa-icon.-clone {
+    @include icon(clone);
+}
+.tpa-icon.-cog {
+    @include icon(cog);
+}
+.tpa-icon.-copy-2 {
+    @include icon(copy-2);
+}
+.tpa-icon.-cup {
+    @include icon(cup);
+}
+.tpa-icon.-dots {
+    @include icon(dots);
+}
+.tpa-icon.-edit {
+    @include icon(edit);
+}
+.tpa-icon.-envelope {
+    @include icon(envelope);
+}
+.tpa-icon.-exit {
+    @include icon(exit);
+}
+.tpa-icon.-facebook {
+    @include icon(facebook);
+}
+.tpa-icon.-google-play {
+    @include icon(google-play);
+}
+.tpa-icon.-google-plus {
+    @include icon(google-plus);
+}
+.tpa-icon.-heart-filled {
+    @include icon(heart-filled);
+}
+.tpa-icon.-heart {
+    @include icon(heart);
+}
+.tpa-icon.-home {
+    @include icon(home);
+}
+.tpa-icon.-ic_fb {
+    @include icon(ic_fb);
+}
+.tpa-icon.-ic_tw {
+    @include icon(ic_tw);
+}
+.tpa-icon.-link {
+    @include icon(link);
+}
+.tpa-icon.-long-arrow-down {
+    @include icon(long-arrow-down);
+}
+.tpa-icon.-long-arrow-left {
+    @include icon(long-arrow-left);
+}
+.tpa-icon.-long-arrow-right {
+    @include icon(long-arrow-right);
+}
+.tpa-icon.-long-arrow-up {
+    @include icon(long-arrow-up);
+}
+.tpa-icon.-nominee {
+    @include icon(nominee);
+}
+.tpa-icon.-pencil {
+    @include icon(pencil);
+}
+.tpa-icon.-plus {
+    @include icon(plus);
+}
+.tpa-icon.-refresh {
+    @include icon(refresh);
+}
+.tpa-icon.-saturn {
+    @include icon(saturn);
+}
+.tpa-icon.-share-2 {
+    @include icon(share-2);
+}
+.tpa-icon.-share {
+    @include icon(share);
+}
+.tpa-icon.-star {
+    @include icon(star);
+}
+.tpa-icon.-times-thin {
+    @include icon(times-thin);
+}
+.tpa-icon.-times {
+    @include icon(times);
+}
+.tpa-icon.-twitter {
+    @include icon(twitter);
+}
+.tpa-icon.-upload {
+    @include icon(upload);
+}
+.tpa-icon.-user {
+    @include icon(user);
+}
+.tpa-icon.-vk {
+    @include icon(vk);
+}

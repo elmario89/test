@@ -1,0 +1,154 @@
+.tpa-submitbox {
+    height:100%;
+
+    &.tpa-container {
+        padding-right: 0;
+    }
+
+    &-header {
+        font-size: 50px;
+        line-height: 60px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        letter-spacing: -2px;
+    }
+
+    &-brief {
+        margin:35px 0;
+        max-width:315px;
+
+        font-family:$font-family-third;
+    }
+
+    &-arrow {
+        margin:30px 0;
+        color:$color-muted;
+        font-size:16px;
+    }
+
+    &-label {
+        display:table;
+        width: 80%;
+
+        font-size: 17px;
+        line-height: 1.41;
+        letter-spacing: -0.5px;
+
+        @media screen and (max-width:330px) {
+            width: 100%;
+        }
+
+        &-wrap {
+            margin-bottom: 50px;
+        }
+
+        &-col {
+            display:table-cell;
+            vertical-align:middle;
+
+            &.icon {
+                font-size: 27px;
+                width: 53px;
+
+                &-next {
+                    font-size: 5px;
+                    text-align: center;
+                    width: 20px;
+                    color: #999;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+
+    &-url {
+        position: relative;
+        margin-top:14px;
+        margin-bottom: 45px;
+
+        textarea {
+            width:100%;
+            height:82px;
+            padding:17px 20px;
+            padding-left: 20px;
+            padding-right: 54px;
+            line-height: 1.43;
+            transition: all 0.2s;
+
+            color:$color-text;
+            background:$color-base;
+            border: solid 1px #e3e3e3;
+            resize:none;
+
+            letter-spacing:0px;
+
+            &.-error {
+                color:$color-error;
+            }
+
+            &.open {
+                height: 75px;
+            }
+        }
+
+        &-actions {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            margin-top: -7px;
+            color: #a9afb4;
+
+            .paste {
+                font-weight: bold;
+                letter-spacing: 1px;
+                color: $color-success;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &-actions {
+        display: table;
+        width: 100%;
+
+        &-wrap {
+            margin:30px 0;
+            margin-right: -20px;
+        }
+
+        &-col {
+            display: table-cell;
+            vertical-align: middle;
+
+            &.-left {
+                padding: 0 10px;
+            }
+
+            &.-right {
+                text-align:right;
+            }
+        }
+
+        &-error {
+            font-family: $font-family-four;
+            font-weight: bold;
+            line-height: 1.43;
+            letter-spacing: -0.4px;
+            color:$color-danger;
+        }
+    }
+
+    .tpa-material {
+        &-head {
+            padding: 4px 0 18px 0;
+        }
+
+        &-screen-img {
+            padding: 0;
+        }
+    }
+
+    .tpa-submitbox-actions-wrap {
+        margin-right: 0;
+    }
+}

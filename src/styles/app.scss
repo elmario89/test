@@ -1,8 +1,38 @@
-// @import 'variables.scss';
-@import 'navbar.scss';
-@import 'buttons.scss';
+// Commons
+@import "variables.scss";
 
-body {
-  background: $color-success;
-}
+// Base
+@import "fonts.scss";
+//@import "bootstrap.scss";
+@import "base.scss";
+//@import "generated/icons.scss";
+//@import "sprites.scss";
+@import "wraps.scss";
 
+// Components
+@import "intro.scss";
+@import "splitbox.scss";
+@import "tabbar.scss";
+@import "footer.scss";
+@import "navbar.scss";
+@import "navbar-old.scss";
+@import "badges.scss";
+@import "buttons.scss";
+@import "progressbar.scss";
+@import "dropdown.scss";
+@import "forms.scss";
+@import "modals.scss";
+@import "alertbox.scss";
+@import "loginbox.scss";
+@import "submitbox.scss";
+@import "material.scss";
+@import "carousel.scss";
+@import "topbar.scss";
+@import "imagebox.scss";
+@import "catalog.scss";
+@import "infobox.scss";
+@import "contentbox.scss";
+@import "lastbox.scss";
+@import "submission.scss";
+@import "loader.scss";
+@import "paginator.scss";

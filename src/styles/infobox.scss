@@ -1,0 +1,80 @@
+.tpa-infobox {
+    width:100%;
+    height:100%;
+
+    &-wrap {
+        padding:90px 0;
+        background:$color-bg-primary;
+
+        @media (min-width:$screen-sm-min) {
+            padding:133px 0 82px 0;
+        }
+
+        @media (min-width:$screen-md-min) {
+            padding:133px 0 98px 0;
+        }
+
+        @media (min-width:$screen-lg-min) {
+            padding:133px 0 168px 0;
+        }
+    }
+
+    &-container {
+
+        @media (min-width:$screen-sm-min) {
+            margin:0 40px;
+        }
+
+        @media (min-width:$screen-md-min) {
+            margin:0 112px;
+        }
+
+        @media (min-width:$screen-lg-min) {
+            margin:0 30px;
+        }
+
+        @media (min-width:$screen-xl-min) {
+            width:1280px;
+            margin:0 auto;
+        }
+    }
+
+    &-header {
+        text-align:center;
+    }
+
+    &-title {
+        position:relative;
+        margin:0 0 69px 0;
+
+        font-size:50px;
+        letter-spacing:0;
+        line-height:48px;
+
+        font-weight:700;
+        font-family:$font-family-secondary;
+        text-transform:uppercase;
+
+        &:before {
+            position:absolute;
+            right:50%;
+            left:50%;
+            margin-left:-19px;
+            bottom:-23px;
+            content:'';
+            width:38px;
+            height:4px;
+            background:$color-text;
+        }
+
+        @media (min-width:$screen-sm-min) {
+            font-size:90px;
+            line-height:86px;
+            margin:0 0 118px 0;
+        }
+
+        @media (min-width:$screen-md-min) {
+            margin:0 0 109px 0;
+        }
+    }
+}

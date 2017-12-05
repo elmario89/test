@@ -1,0 +1,27 @@
+.tpa-catalog {
+    overflow-y:scroll;
+    height:100%;
+    background:$color-secondary;
+
+    &-box {
+        padding: 54px 0 0 0;
+
+        @media (min-width:$screen-sm-min) {
+            padding:134px 0 0 0;
+            margin:0 auto;
+            max-width:600px;
+        }
+    }
+
+    &.-submit {
+        .tpa-catalog-box {
+            margin-top: 15px;
+
+            @media (min-width:$screen-sm-min) {
+                padding:203px 0 0 0;
+                margin:0 auto;
+                max-width:600px;
+            }
+        }
+    }
+}
