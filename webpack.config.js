@@ -14,6 +14,7 @@ module.exports = {
     devtool: 'inline-source-map',
     entry: [
         'babel-polyfill',
+        'whatwg-fetch',
         'react-hot-loader/patch',
         'webpack-hot-middleware/client',
         './src/index',
