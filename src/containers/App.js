@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
 import Navbar from 'src/components/Navbar';
+import Landing from 'src/components/Landing';
+import NotFound from 'src/components/NotFound';
 
 class App extends Component {
     render() {
         return (
-            <div className='tpa-navbar-outer'>
-                <Navbar />
-                this is landing page
-            </div>
+          <BrowserRouter>
+              <div>
+                  <Navbar />
+                  <Switch>
+                      <Route exact pattern='/' component={Landing} />
+                      <Route component={NotFound} />
+                  </Switch>
+              </div>
+          </BrowserRouter>
         )
     }
 }

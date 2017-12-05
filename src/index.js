@@ -9,14 +9,12 @@ const rootEl = document.getElementById('root');
 const renderContainer = Component => {
     render(
         <AppContainer>
-            <div className='app'>
-                <Component />
-            </div>
+            <Component />
         </AppContainer>,
         rootEl
     )
 }
 
-renderContainer(App)
+renderContainer(App);
 
 if (module.hot) module.hot.accept('./containers/App', () => renderContainer(App));

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 class Navbar extends Component {
     render() {
@@ -7,33 +7,33 @@ class Navbar extends Component {
             <nav className='tpa-navbar'>
               <div className='tpa-navbar-inner'>
                 <div className='tpa-navbar-left'>
-                    <a to='/' className='tpa-navbar-logo' >Tappawards</a>
+                    <Link to='/' className='tpa-navbar-logo' >Tappawards</Link>
                 </div>
                 <div className='tpa-navbar-right'>
                   <div className='tpa-navbar-nav'>
                     <div className='tpa-navbar-nav-menu'>
-                        <a to='/' className='tpa-navbar-logo tpa-navbar-nav-menu-item'>
+                        <Link to='/' className='tpa-navbar-logo tpa-navbar-nav-menu-item'>
                             <span className='tpa-navbar-nav-menu-item-icon -danger'>
                                 <i className='tpa-icon -saturn' />
                             </span>
                             <span>AOTM<b> Aug '17</b></span>
-                        </a>
+                        </Link>
 
-                        <a to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/winners' className='tpa-navbar-nav-menu-item'>
                             Winners
-                        </a>
+                        </Link>
 
-                        <a to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/' className='tpa-navbar-nav-menu-item'>
                             Nominees
-                        </a>
+                        </Link>
 
-                        <a to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/' className='tpa-navbar-nav-menu-item'>
                             Jury
-                        </a>
+                        </Link>
 
-                        <a to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/' className='tpa-navbar-nav-menu-item'>
                             Log in
-                        </a>
+                        </Link>
 
                         <button className='tpa-btn_primary -nav'>
                             <span>Submit the app</span>

@@ -21,6 +21,7 @@ body {
 a {
     color:$color-link;
     cursor:pointer;
+    text-decoration: none;
 
     &:hover, &:focus {
         color:$color-link-hover;
