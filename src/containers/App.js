@@ -6,7 +6,6 @@ import Landing from 'src/components/Landing/Landing';
 import NotFound from 'src/components/NotFound';
 import Winners from 'src/components/Winners'
 
-
 const App = () => {
     return (
       <div>

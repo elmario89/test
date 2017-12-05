@@ -26,12 +26,8 @@ class ApiService {
         };
 
         return fetch(`${BASE_URL}${url}?_fields=${fetchOptions.params._fields}&limit=${fetchOptions.params.limit}`)
-            .then(function(response) {
-                return response.json();
-            })
-                .then(function(winner) {
-                    console.log(winner);
-                });
+            .then(response => response.json())
+            .then(winner => winner);
     }
 }
 

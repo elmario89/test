@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import IntroRating from 'src/components/IntroRating';
 import ButtonSet from 'src/components/ButtonSet';
 
 class Intro extends Component {
     render() {
+        const winner = this.props.winner;
+        console.log(winner);
+
         return (
           <section className='tpa-intro'>
               <div className='tpa-intro-body'>
                   <a className='tpa-intro-link'></a>
                   <div style={{backgroundColor: 'rgb(76, 222, 200)'}} className='tpa-intro-fill'></div>
-                  <div className='tpa-intro-date'>4 December, 2017</div>
+                  <div className='tpa-intro-date'>{winner.winDate}</div>
                   <div className='tpa-intro-actions'>
                       <a className='tpa-btn_transparent'>
                           <div className='tpa-btn_transparent-hover'></div>
@@ -74,5 +78,9 @@ class Intro extends Component {
         )
     }
 }
+
+Intro.propTypes = {
+    winner: PropTypes.object.isRequired
+};
 
 export default Intro;

@@ -1,4 +1,3 @@
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
@@ -15,7 +14,6 @@ module.exports = {
     entry: [
         'babel-polyfill',
         'whatwg-fetch',
-        'react-hot-loader/patch',
         'webpack-hot-middleware/client',
         './src/index',
         path.resolve(__dirname, 'src') + '/styles/app.scss'
@@ -78,7 +76,6 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new NpmInstallPlugin(),
         extractSass
     ],
 };

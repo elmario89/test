@@ -4,20 +4,25 @@ import Intro from 'src/components/Landing/Intro';
 import ApiService from 'src/services/ApiService';
 
 class Landing extends Component {
-    componentDidMount() {
+    constructor() {
+        super();
+        this.state = {winner: null}
+    }
+
+    componentWillMount(p) {
         const service = new ApiService();
-        const winners = service.send('listWinners', {
+        service.send('listWinners', {
             query: {
                 limit: 1
             }
-        });
-
-        console.log(winners);
+        }).then(response => this.setState({ winner: response.result.items }));
     }
 
     render() {
         return (
-          <Intro />
+            <div>
+                {this.state.winner ? <Intro winner={this.state.winner[0]} /> : ''}
+            </div>
         )
     }
 }
