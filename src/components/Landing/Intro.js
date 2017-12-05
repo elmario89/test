@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+
 import IntroRating from 'src/components/IntroRating';
+import LikeButton from 'src/components/LikeButton';
 
 class Intro extends Component {
     render() {
@@ -35,6 +37,7 @@ class Intro extends Component {
                               <i className='tpa-icon -share'></i>
                           </div>
                       </button>
+                      <LikeButton />
                   </div>
 
                   <div className='tpa-intro-container'>
