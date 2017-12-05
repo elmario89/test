@@ -2,6 +2,7 @@ export const BASE_URL = 'http://api.tappawards.com/api/v1';
 
 export const APP_FIELDS = [
     'name',
+    'platform',
     'developer(name,url)',
     'collaborator(name,url)',
     'screens',

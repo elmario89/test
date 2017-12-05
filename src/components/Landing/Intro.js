@@ -15,7 +15,7 @@ class Intro extends Component {
           <section className='tpa-intro'>
               <div className='tpa-intro-body'>
                   <a className='tpa-intro-link'></a>
-                  <div style={{backgroundColor: 'rgb(76, 222, 200)'}} className='tpa-intro-fill'></div>
+                  <div style={{backgroundColor: winner.screensBgColor}} className='tpa-intro-fill'></div>
                   <div className='tpa-intro-date'>{formatDate(winner.winDate)}</div>
                   <div className='tpa-intro-actions'>
                       <a className='tpa-btn_transparent'>
@@ -30,9 +30,9 @@ class Intro extends Component {
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-inner'>
-                          <i className='-apple tpa-icon'></i>
-                          <span>Free</span>
-                        </div>
+                            <i className={winner.platform === 'ios' ? '-apple tpa-icon' : '-google-play tpa-icon'}></i>
+                            <span>{winner.price.value !== 0 ? `${winner.price.value} ${winner.price.currency}` : 'Free'}</span>
+                          </div>
                       </a>
                   </div>
                   <ButtonSet />
@@ -63,11 +63,11 @@ class Intro extends Component {
                                       <h1>#Appoftheday</h1>
                                   </div>
                                   <div className='tpa-intro-subtitle'>
-                                      <h2>Google trips</h2>
+                                      <h2>{winner.name}</h2>
                                   </div>
                                   <div className='tpa-intro-brief'>
                                       <p>
-                                          by <span>Google inc</span>
+                                          by <span>{winner.developer.name}</span>
                                       </p>
                                   </div>
                                   <IntroRating />
