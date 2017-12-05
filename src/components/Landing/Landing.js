@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-// import {Link} from 'react-router';
+import Intro from 'src/components/Landing/Intro';
 
 class Landing extends Component {
     render() {
         return (
-          <div>landing</div>
+          <Intro />
         )
     }
 }

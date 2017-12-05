@@ -2,7 +2,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom';
 
 import Navbar from 'src/components/Navbar';
-import Landing from 'src/components/Landing';
+import Landing from 'src/components/Landing/Landing';
 import NotFound from 'src/components/NotFound';
 import Winners from 'src/components/Winners'
 
