@@ -1,24 +1,26 @@
-import React, { Component } from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom';
 
 import Navbar from 'src/components/Navbar';
 import Landing from 'src/components/Landing';
 import NotFound from 'src/components/NotFound';
+import Winners from 'src/components/Winners'
 
-class App extends Component {
-    render() {
-        return (
-          <BrowserRouter>
-              <div>
-                  <Navbar />
-                  <Switch>
-                      <Route exact pattern='/' component={Landing} />
-                      <Route component={NotFound} />
-                  </Switch>
-              </div>
-          </BrowserRouter>
-        )
-    }
-}
+
+const App = () => {
+    return (
+      <div>
+          <Navbar/>
+          <div className='tpa-navbar-outer'>
+              <Switch>
+                  <Route exact path='/' component={Landing} />
+                  <Route exact path='/winners' component={Winners} />
+                  <Route component={NotFound} />
+              </Switch>
+          </div>
+      </div>
+    )
+};
+
 
 export default App;
