@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import IntroRating from 'src/components/IntroRating';
 
 class Intro extends Component {
     render() {
@@ -7,7 +8,7 @@ class Intro extends Component {
               <div className='tpa-intro-body'>
                   <a className='tpa-intro-link'></a>
                   <div style={{backgroundColor: 'rgb(76, 222, 200)'}} className='tpa-intro-fill'></div>
-                  <div className='tpa-intro-date'>4 december, 2017</div>
+                  <div className='tpa-intro-date'>4 December, 2017</div>
                   <div className='tpa-intro-actions'>
                       <a className='tpa-btn_transparent'>
                           <div className='tpa-btn_transparent-hover'></div>
@@ -69,26 +70,7 @@ class Intro extends Component {
                                           by <span>Google inc</span>
                                       </p>
                                   </div>
-                                  <div className='tpa-intro-rating'>
-                                      <div className='tpa-intro-rating-box'>
-                                          <div className='tpa-intro-rating-item'>
-                                              <div className='tpa-intro-rating-num'><span>6.72</span></div>
-                                              <div className='tpa-intro-rating-label'>Average</div>
-                                          </div>
-                                          <div className='tpa-intro-rating-item'>
-                                              <div className='tpa-intro-rating-num'>6.8</div>
-                                              <div className='tpa-intro-rating-label'>Design</div>
-                                          </div>
-                                          <div className='tpa-intro-rating-item'>
-                                              <div className='tpa-intro-rating-num'>7.4</div>
-                                              <div className='tpa-intro-rating-label'>Usability</div>
-                                          </div>
-                                          <div className='tpa-intro-rating-item'>
-                                              <div className='tpa-intro-rating-num'>5.2</div>
-                                              <div className='tpa-intro-rating-label'>Motion</div>
-                                          </div>
-                                      </div>
-                                  </div>
+                                  <IntroRating />
                               </div>
                           </div>
                       </div>

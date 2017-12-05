@@ -541,7 +541,7 @@
         }
 
         &-box {
-            //@include clearfix;
+            @include clearfix;
         }
 
         &-list {

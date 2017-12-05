@@ -82,7 +82,7 @@
 
     &-items {
         padding:0;
-        //@include clearfix;
+        @include clearfix;
     }
 
     &-item {
