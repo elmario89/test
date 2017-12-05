@@ -2,13 +2,10 @@ export const BASE_URL = 'http://api.tappawards.com/api/v1';
 
 export const APP_FIELDS = [
     'name',
-    'platform',
     'developer(name,url)',
     'collaborator(name,url)',
     'screens',
     'video(videoThumbnail)',
-    'statusChangeDate',
-    'description',
     'storeUrl',
     'screensBgColor',
     'rateDate',
@@ -16,10 +13,7 @@ export const APP_FIELDS = [
     'winDate',
     'isLiked',
     'likeCount',
-    'icon',
-    'price',
-    'totalCount',
-    'permalink'
+    'price'
 ].join(',');
 
 export const actions = {
