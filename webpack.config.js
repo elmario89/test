@@ -11,7 +11,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'inline-source-map',
     entry: [
         'babel-polyfill',
         'react-hot-loader/patch',
@@ -36,11 +36,14 @@ module.exports = {
                 test: /\.scss$/,
                 use: extractSass.extract({
                     use: [{
-                        loader: "css-loader"
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
                     }, {
-                        loader: "sass-loader", options: {
+                        loader: "sass-loader",
+                        options: {
                             sourceMap: true,
-                            data: '@import "variables";',
                             includePaths: [
                                 path.join(__dirname, 'src')
                             ]
