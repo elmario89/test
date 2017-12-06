@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import IntroRating from 'src/components/IntroRating';
 import ActionButtonSet from 'src/components/ActionButtonSet';
-import OwlCarousel from 'src/components/OwlCarousel';
+import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
 
 import {formatDate} from 'src/helpers';
 
@@ -47,7 +47,7 @@ class Intro extends Component {
                           </div>
                           <div className='tpa-intro-col'>
                               <div className='tpa-intro-slider'>
-                                  <OwlCarousel />
+                                  <OwlCarouselWrapper />
                               </div>
                           </div>
                           <div className='tpa-intro-col -last'>

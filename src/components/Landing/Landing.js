@@ -9,7 +9,7 @@ class Landing extends Component {
         this.state = {winner: null}
     }
 
-    componentWillMount(p) {
+    componentWillMount() {
         const service = new ApiService();
         service.send('listWinners', {
             query: {
