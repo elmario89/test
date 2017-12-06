@@ -30,7 +30,7 @@ class Intro extends Component {
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-inner'>
-                            <i className={winner.platform === 'ios' ? '-apple tpa-icon' : '-google-play tpa-icon'}></i>
+                            <i className={winner.platform === 'ios' ? '-apple tpa-icon' : '-google-play tpa-icon'} />
                             <span>{winner.price.value !== 0 ? `${winner.price.value} ${winner.price.currency}` : 'Free'}</span>
                           </div>
                       </a>

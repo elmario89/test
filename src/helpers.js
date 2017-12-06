@@ -4,7 +4,6 @@ export function formatDate(date) {
     const month = names[dateObj.getMonth() + 1]; //months from 1-12
     const day = dateObj.getUTCDate();
     const year = dateObj.getUTCFullYear();
-    const finalDate = `${day} ${month}, ${year}`;
 
-    return finalDate;
+    return `${day} ${month}, ${year}`;
 }
