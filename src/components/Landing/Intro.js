@@ -70,7 +70,7 @@ class Intro extends Component {
                                           by <span>{winner.developer.name}</span>
                                       </p>
                                   </div>
-                                  <IntroRating />
+                                  <IntroRating rates={winner.rates} />
                               </div>
                           </div>
                       </div>
