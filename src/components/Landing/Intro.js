@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import IntroRating from 'src/components/IntroRating';
-import ButtonSet from 'src/components/ButtonSet';
+import ActionButtonSet from 'src/components/ActionButtonSet';
 
 import {formatDate} from 'src/helpers';
 
@@ -35,7 +35,7 @@ class Intro extends Component {
                           </div>
                       </a>
                   </div>
-                  <ButtonSet />
+                  <ActionButtonSet likeCount={winner.likeCount} />
 
                   <div className='tpa-intro-container'>
                       <div className='tpa-intro-wrap'>
