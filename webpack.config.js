@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const precss = require('precss');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
@@ -69,7 +68,10 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|gif|mp4)$/,
-                loader: "file-loader"
+                loader: "file-loader",
+                options: {
+                    publicPath: 'assets/'
+                }
             }
         ]
     },

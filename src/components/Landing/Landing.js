@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Intro from 'src/components/Landing/Intro';
 
 import {sendApiRequest} from 'src/services/ApiService';
+
+import Intro from 'src/components/Landing/Intro';
+import LandingStatic from 'src/components/Landing/LandingStatic';
 
 class Landing extends Component {
     constructor() {
@@ -20,7 +22,8 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                {this.state.winner ? <Intro winner={this.state.winner[0]} /> : ''}
+                {this.state.winner ? <Intro winner={this.state.winner[0]} /> : null}
+                {this.state.winner ? <LandingStatic /> : null}
             </div>
         )
     }
