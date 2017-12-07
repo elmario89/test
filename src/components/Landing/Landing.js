@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Intro from 'src/components/Landing/Intro';
 
-import ApiService from 'src/services/ApiService';
+import {sendApiRequest} from 'src/services/ApiService';
 
 class Landing extends Component {
     constructor() {
@@ -10,8 +10,7 @@ class Landing extends Component {
     }
 
     componentWillMount() {
-        const service = new ApiService();
-        service.send('listWinners', {
+        sendApiRequest('listWinners', {
             query: {
                 limit: 1
             }
