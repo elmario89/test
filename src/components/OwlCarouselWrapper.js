@@ -4,9 +4,18 @@ import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';
 
 class OwlCarouselWrapper extends Component {
+    constructor() {
+        super();
+        this.state = {videoIsLoaded: false}
+    }
+
     componentDidMount() {
         const video = this.refs.winnerVideo;
-        video.play();
+
+        video.oncanplay = function() {
+            this.setState({videoIsLoaded: true});
+            video.play();
+        }.bind(this);
     }
 
     renderImage(screen, size) {
@@ -32,6 +41,8 @@ class OwlCarouselWrapper extends Component {
                       <source src={video.url} type='video/mp4'/>
                       Your browser does not support the video tag.
                   </video>
+
+                  {!this.state.videoIsLoaded ? <div className='tpa-loader'><span /></div> : null}
               </div>
           </div>
         )
