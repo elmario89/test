@@ -47,7 +47,7 @@ class Intro extends Component {
                           </div>
                           <div className='tpa-intro-col'>
                               <div className='tpa-intro-slider'>
-                                  <OwlCarouselWrapper />
+                                  <OwlCarouselWrapper video={winner.video} screens={winner.screens}/>
                               </div>
                           </div>
                           <div className='tpa-intro-col -last'>
