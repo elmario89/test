@@ -39,8 +39,6 @@
             display:inline-block;
             width:100%;
 
-            background-color: gold;
-
             background-size:cover;
             background-position:center center;
             background-repeat:no-repeat;
@@ -82,15 +80,17 @@
 
         &-stage-outer {
             video{
-                width: 185px;
-                height: 328.88px;
+                height: 100%;
+                width: 100%;
+                //width: 185px;
+                //height: 328.88px;
 
                 background: rgba(0, 0, 0, 0.3);
 
-                @media (min-width:$screen-sm-min) {
-                    height: 526px;
-                    width: 296px;
-                }
+                //@media (min-width:$screen-sm-min) {
+                //    height: 526px;
+                //    width: 296px;
+                //}
             }
         }
 

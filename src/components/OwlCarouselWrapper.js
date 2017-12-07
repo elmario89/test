@@ -4,20 +4,32 @@ import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';
 
 class OwlCarouselWrapper extends Component {
+    componentDidMount() {
+        const video = this.refs.winnerVideo;
+        video.play();
+    }
+
     renderImage(screen, size) {
         const url = `${screen.url}/${size}`;
 
         return (
-          <div key={screen._id} className='tpa-carousel-item'><div className='tpa-carousel-img'><img src={url} alt=''/></div></div>
+          <div key={screen._id} className='tpa-carousel-item'>
+              <div className='tpa-carousel-img'>
+                  <img
+                    src={url}
+                    alt={screen._id}
+                  />
+              </div>
+          </div>
         )
     }
 
     renderVideo(video) {
         return (
-          <div className='tpa-carousel-item'>
+          <div key={video._id} className='tpa-carousel-item'>
               <div className='tpa-carousel-item-inner'>
-                  <video autoPlay className='tpa-carousel-item-video'>
-                      <source src={this.props.video.url} type='video/mp4'/>
+                  <video ref='winnerVideo' loop muted className='tpa-carousel-item-video'>
+                      <source src={video.url} type='video/mp4'/>
                       Your browser does not support the video tag.
                   </video>
               </div>
