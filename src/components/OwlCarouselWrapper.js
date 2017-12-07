@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';
 
 class OwlCarouselWrapper extends Component {
-    renderImage(screen) {
+    renderImage(screen, size) {
+        const url = `${screen.url}/${size}`;
+
         return (
-          <div key={screen._id} className='tpa-carousel-item'><div className='tpa-carousel-img'><img src={screen.url} alt=''/></div></div>
+          <div key={screen._id} className='tpa-carousel-item'><div className='tpa-carousel-img'><img src={url} alt=''/></div></div>
         )
     }
 
@@ -30,11 +32,12 @@ class OwlCarouselWrapper extends Component {
                   <OwlCarousel
                     className='tpa-carousel'
                     autoplay
+                    smartSpeed={600}
                     items={1}
-                    margin={10}
+                    margin={20}
                   >
                       {this.props.video ? this.renderVideo(this.props.video) : null}
-                      {this.props.screens.map(screen => this.renderImage(screen))}
+                      {this.props.screens.map(screen => this.renderImage(screen, '410x728'))}
                   </OwlCarousel>
               </div>
           </div>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import IntroRating from 'src/components/IntroRating';
-import ActionButtonSet from 'src/components/ActionButtonSet';
+import ActionButtonSet from 'src/components/ui/ActionButtonSet';
 import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
 
 import {formatDate} from 'src/helpers';
