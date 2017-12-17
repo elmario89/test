@@ -67,11 +67,8 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|gif|mp4)$/,
-                loader: "file-loader",
-                options: {
-                    publicPath: 'assets/'
-                }
+                test: /\.(eot|svg|ttf|woff|woff2|png|gif|mp4|jpg)$/,
+                loader: "url-loader"
             }
         ]
     },

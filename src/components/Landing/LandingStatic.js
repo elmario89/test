@@ -5,13 +5,12 @@ class LandingStatic extends Component {
     render() {
         return (
           <div>
-              <img src='./assets/img/sprites/sprites.png' alt=''/>
               <section className='tpa-splitbox -primary'>
                   <div className='tpa-splitbox-inner'>
                       <div className='tpa-splitbox-col -fill'>
                           <div className='tpa-splitbox-body'>
                               <div className='tpa-splitbox-body-inner'>
-                                  <div className='tpa-splitbox-img'><img src='/assets/img/about/appofthemonth.png' srcSet='/assets/img/about/appofthemonth@2x.png 2x' alt='App Of The Month'/></div>
+                                  <div className='tpa-splitbox-img'><img src={require('../../assets/img/about/appofthemonth.png')} srcSet={require('../../assets/img/about/appofthemonth@2x.png')} alt='App Of The Month'/></div>
                               </div>
                           </div>
                       </div>
@@ -35,7 +34,7 @@ class LandingStatic extends Component {
                   </div>
               </section>
               <section className='tpa-splitbox'>
-                  <div style={{backgroundImage: 'url(/assets/img/about/middle.jpg)'}} className='tpa-splitbox-bg'></div>
+                  <div style={{backgroundImage: `url(${require('../../assets/img/about/middle.jpg')}`}} className='tpa-splitbox-bg'></div>
               </section>
               <section className='tpa-splitbox -small'>
                   <div className='tpa-splitbox-inner'>
@@ -91,7 +90,7 @@ class LandingStatic extends Component {
                           </div>
                       </div>
                       <div style={{display: 'block'}} className='tpa-splitbox-col -height -indent'>
-                          <div style={{backgroundImage: 'url(/assets/img/about/certificates@2x.jpg)'}} className='tpa-splitbox-bg -position'></div>
+                          <div style={{backgroundImage: `url(${require('../../assets/img/about/certificates@2x.jpg')}`}} className='tpa-splitbox-bg -position'></div>
                       </div>
                   </div>
               </section>
@@ -110,19 +109,19 @@ class LandingStatic extends Component {
                                       </div>
                                       <div className='tpa-splitbox-jury-col -right'>
                                           <div className='tpa-splitbox-jury-list'>
-                                              <div style={{backgroundImage: 'url(https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/flip.jpg)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/src/assets/img/jury/2.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/src/assets/img/jury/3.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/src/assets/img/jury/4.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/src/assets/img/jury/5.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/src/assets/img/jury/6.png)'}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/1.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/2.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/3.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/4.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/5.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/6.png')})`}} className='tpa-splitbox-jury-item'></div>
                                               <div className='tpa-splitbox-jury-item -offsettop'></div>
                                               <div className='tpa-splitbox-jury-item -offset'></div>
                                               <div className='tpa-splitbox-jury-item -offset'></div>
-                                              <div style={{backgroundImage: 'url(/assets/img/jury/7.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/assets/img/jury/8.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/assets/img/jury/9.png)'}} className='tpa-splitbox-jury-item'></div>
-                                              <div style={{backgroundImage: 'url(/assets/img/jury/10.png)'}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/7.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/8.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/9.png')})`}} className='tpa-splitbox-jury-item'></div>
+                                              <div style={{backgroundImage: `url(${require('../../assets/img/jury/10.png')})`}} className='tpa-splitbox-jury-item'></div>
                                               <div className='tpa-splitbox-jury-item -action'>
                                                   <Link to='/winners' className='tpa-splitbox-jury-action'>
                                                       <div className='tpa-splitbox-jury-action-text'>
