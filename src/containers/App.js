@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Switch} from 'react-router-dom';
 
 import Navbar from 'src/components/Navbar';
+import Footer from 'src/components/Footer';
 import Landing from 'src/components/Landing/Landing';
 import NotFound from 'src/components/NotFound';
 import Winners from 'src/components/Winners'
@@ -9,7 +10,7 @@ import Winners from 'src/components/Winners'
 const App = () => {
     return (
       <div>
-          <Navbar/>
+          <Navbar />
           <div className='tpa-navbar-outer'>
               <Switch>
                   <Route exact path='/' component={Landing} />
@@ -17,6 +18,7 @@ const App = () => {
                   <Route component={NotFound} />
               </Switch>
           </div>
+          <Footer />
       </div>
     )
 };
