@@ -37,8 +37,6 @@ class ProjectPreview extends Component {
               <a ui-sref='project.projectDetails({id: project.permalink})' className='tpa-lastbox-items-item-body-title'>
                 <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>
                 {project.video ? this.renderVideo(project.video) : this.renderCarousel(project)}
-                {/*<div ng-if='!project.video' screenshot='project.screens[0].url' size='296x525' className='tpa-lastbox-items-item-screen-img' />
-                <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>*/}
               </a>
             </div>
           </div>

@@ -35,7 +35,7 @@ class Navbar extends Component {
                             Winners
                         </Link>
 
-                        <Link to='/' className={this.checkActive('/nominees')}>
+                        <Link to='/nominees' className={this.checkActive('/nominees')}>
                             Nominees
                         </Link>
 
