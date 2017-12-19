@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {sendApiRequest} from 'src/services/ApiService';
+import {sendApiRequest} from 'src/services/apiService';
 
 import Intro from 'src/components/Landing/Intro';
 import LandingStatic from 'src/components/Landing/LandingStatic';

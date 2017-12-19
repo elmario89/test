@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import ProjectPreview from 'src/components/ProjectPreview';
 import Paginator from 'src/components/includes/Paginator';
 
-import {sendApiRequest} from 'src/services/ApiService';
+import {paginate} from 'src/services/paginateService';
 
 class Winners extends Component {
     constructor() {
@@ -15,24 +15,17 @@ class Winners extends Component {
 
         this.winnersLimit = 8;
 
-        this.paginate = this.paginate.bind(this);
+        this.handlePaginate = this.handlePaginate.bind(this);
     }
 
-    paginate(page) {
-        sendApiRequest('listWinners', {
-            query: {
-                limit: 8,
-                skip: page * this.winnersLimit
-            }
-        }).then(response => this.setState({ winners: response.result.items }));
+    handlePaginate(page) {
+        paginate(page, 'listWinners', this.winnersLimit)
+            .then(response => this.setState({ winners: response.result.items }));
     }
 
     componentWillMount() {
-        sendApiRequest('listWinners', {
-            query: {
-                limit: 8
-            }
-        }).then(response => this.setState({ winners: response.result.items }));
+        paginate(0, 'listWinners', this.winnersLimit)
+            .then(response => this.setState({ winners: response.result.items }));
     }
 
     render() {
@@ -44,7 +37,8 @@ class Winners extends Component {
                       <div className='tpa-lastbox-items -grid'>
                         {this.state.winners ? this.state.winners.map(winner => <ProjectPreview key={winner._id}  project={winner} />) : null}
                       </div>
-                      <Paginator paginate={this.paginate} />
+                      
+                      <Paginator paginate={this.handlePaginate} />
                     </div>
                   </div>
                 </div>
