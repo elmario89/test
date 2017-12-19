@@ -4,11 +4,22 @@ import {sendApiRequest} from 'src/services/ApiService';
 
 import Intro from 'src/components/Landing/Intro';
 import LandingStatic from 'src/components/Landing/LandingStatic';
+import LatestNominees from 'src/components/Landing/LatestNominees';
 
 class Landing extends Component {
     constructor() {
         super();
         this.state = {winner: null}
+    }
+
+    renderLanding() {
+        return (
+            <div>
+                <Intro winner={this.state.winner[0]} />
+                <LatestNominees />
+                <LandingStatic />
+            </div>
+        )
     }
 
     componentWillMount() {
@@ -22,8 +33,7 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                {this.state.winner ? <Intro winner={this.state.winner[0]} /> : null}
-                {this.state.winner ? <LandingStatic /> : null}
+                {this.state.winner ? this.renderLanding() : null}
             </div>
         )
     }
