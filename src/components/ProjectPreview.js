@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import ShareMenu from 'src/components/ui/ShareMenu';
 import Video from 'src/components/ui/Video';
+import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
 
 class ProjectPreview extends Component {
     renderVideo(video) {
@@ -12,8 +13,8 @@ class ProjectPreview extends Component {
       )
     }
 
-    renderCarousel() {
-      return <div>this is carousel</div>
+    renderCarousel(project) {
+      return <OwlCarouselWrapper screens={project.screens} size='296x525' />
     }
 
     render() {
@@ -36,7 +37,7 @@ class ProjectPreview extends Component {
               </a>
               <a ui-sref='project.projectDetails({id: project.permalink})' className='tpa-lastbox-items-item-body-title'>
                 <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>
-                {project.video ? this.renderVideo(project.video) : this.renderCarousel()}
+                {project.video ? this.renderVideo(project.video) : this.renderCarousel(project)}
                 {/*<div ng-if='!project.video' screenshot='project.screens[0].url' size='296x525' className='tpa-lastbox-items-item-screen-img' />
                 <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>*/}
               </a>

@@ -31,6 +31,8 @@ class OwlCarouselWrapper extends Component {
     }
 
     render() {
+        const size = this.props.size || '410x728';
+
         return (
           <div className='tpa-carousel'>
               <div className='tpa-carousel-items'>
@@ -40,9 +42,10 @@ class OwlCarouselWrapper extends Component {
                     smartSpeed={600}
                     items={1}
                     margin={20}
+                    dots={false}
                   >
                       {this.props.video ? this.renderVideo(this.props.video) : null}
-                      {this.props.screens.map(screen => this.renderImage(screen, '410x728'))}
+                      {this.props.screens.map(screen => this.renderImage(screen, size))}
                   </OwlCarousel>
               </div>
           </div>
@@ -53,6 +56,7 @@ class OwlCarouselWrapper extends Component {
 OwlCarouselWrapper.propTypes = {
     video: PropTypes.object,
     screens: PropTypes.array.isRequired,
+    size: PropTypes.string
 };
 
 export default OwlCarouselWrapper;
