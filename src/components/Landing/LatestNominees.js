@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
+import ProjectPreview from 'src/components/ProjectPreview';
+
 class LatestNominees extends Component {
     render() {
         return (
@@ -11,7 +13,7 @@ class LatestNominees extends Component {
                 <div className='tpa-lastbox-container'>
                   <div className='tpa-lastbox-title'>Latest NOMINEES</div>
                   <div className="tpa-lastbox-items -first">
-                    {this.props.nominees.map(nominee => <div key={nominee._id}>{nominee.name}</div>)}
+                    {this.props.nominees.map(nominee => <ProjectPreview key={nominee._id} project={nominee} />)}
                   </div>
                   <Link to='/winners' className='tpa-lastbox-more'>
                     <div className='tpa-lastbox-more-inner'>
