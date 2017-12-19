@@ -19,7 +19,6 @@ class ProjectPreview extends Component {
 
     render() {
       const project = this.props.project;
-      console.log(project);
 
       return (
         <div className='tpa-lastbox-items-item'>
