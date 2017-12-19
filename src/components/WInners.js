@@ -15,7 +15,7 @@ class Winners extends Component {
     componentWillMount() {
         sendApiRequest('listWinners', {
             query: {
-                limit: 10
+                limit: 8
             }
         }).then(response => this.setState({ winners: response.result.items }));
     }

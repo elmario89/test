@@ -1,7 +1,19 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import {withRouter} from 'react-router'
+
 class Navbar extends Component {
+    constructor() {
+        super();
+
+        this.checkActive = this.checkActive.bind(this);
+    }
+
+    checkActive(location) {
+        return location === this.props.location.pathname ? 'tpa-navbar-nav-menu-item -active' : 'tpa-navbar-nav-menu-item';
+    }
+
     render() {
         return (
             <nav className='tpa-navbar'>
@@ -19,7 +31,7 @@ class Navbar extends Component {
                             <span>AOTM<b> Aug '17</b></span>
                         </Link>
 
-                        <Link to='/winners' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/winners' className={this.checkActive('/winners')}>
                             Winners
                         </Link>
 
@@ -47,4 +59,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
