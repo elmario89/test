@@ -35,11 +35,11 @@ class Navbar extends Component {
                             Winners
                         </Link>
 
-                        <Link to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/' className={this.checkActive('/nominees')}>
                             Nominees
                         </Link>
 
-                        <Link to='/' className='tpa-navbar-nav-menu-item'>
+                        <Link to='/' className={this.checkActive('/jury')}>
                             Jury
                         </Link>
 
