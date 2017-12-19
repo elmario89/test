@@ -17,11 +17,12 @@ class Video extends Component {
     }
 
     render() {
+        const video = this.props.video;
         return (
           <div>
             <video ref='videoFile' loop muted className='tpa-carousel-item-video'>
-                <source src={this.props.video.url} type='video/mp4' />
-                Your broser doesnt support the video tag
+                <source src={video.url} type='video/mp4' />
+                Your browser doesn't support the video tag
             </video>
             {!this.state.videoIsLoaded ? <div className='tpa-loader'><span /></div> : null}
         </div>
