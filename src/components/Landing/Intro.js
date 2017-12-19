@@ -10,7 +10,6 @@ import {formatDate} from 'src/helpers';
 class Intro extends Component {
     render() {
         const winner = this.props.winner;
-        console.log(winner);
 
         return (
           <section className='tpa-intro'>

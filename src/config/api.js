@@ -24,5 +24,12 @@ export const actions = {
         query: {
             _fields: `items(${APP_FIELDS})`
         }
+    },
+    listNominees: {
+        method: 'GET',
+        url: '/apps',
+        query: {
+            _fields: `items(${APP_FIELDS})`
+        }
     }
 };

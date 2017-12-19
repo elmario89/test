@@ -9,14 +9,17 @@ import LatestNominees from 'src/components/Landing/LatestNominees';
 class Landing extends Component {
     constructor() {
         super();
-        this.state = {winner: null}
+        this.state = {
+            winner: null,
+            latestNominees: null
+        }
     }
 
     renderLanding() {
         return (
             <div>
                 <Intro winner={this.state.winner[0]} />
-                <LatestNominees />
+                <LatestNominees nominees={this.state.latestNominees} />
                 <LandingStatic />
             </div>
         )
@@ -28,12 +31,18 @@ class Landing extends Component {
                 limit: 1
             }
         }).then(response => this.setState({ winner: response.result.items }));
+
+        sendApiRequest('listNominees', {
+            query: {
+                limit: 4
+            }
+        }).then(response => this.setState({ latestNominees: response.result.items }));
     }
 
     render() {
         return (
             <div>
-                {this.state.winner ? this.renderLanding() : null}
+                {this.state.winner && this.state.latestNominees ? this.renderLanding() : null}
             </div>
         )
     }
