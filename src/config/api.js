@@ -6,7 +6,7 @@ export const APP_FIELDS = [
     'developer(name,url)',
     'collaborator(name,url)',
     'screens',
-    'video(videoThumbnail)',
+    'video',
     'storeUrl',
     'screensBgColor',
     'rateDate',

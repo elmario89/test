@@ -12,14 +12,15 @@
     }
 
     &-item-video {
-        width: 185px;
-        height: 328px;
+        width: 100%;
+        // width: 185px;
+        // height: 328px;
 
         background: rgba(0, 0, 0, 0.3);
 
         @media (min-width:$screen-sm-min) {
-            width: 296px;
-            height: 525px;
+            // width: 296px;
+            // height: 525px;
         }
     }
 

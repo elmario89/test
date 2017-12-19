@@ -1,10 +1,21 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 import ShareMenu from 'src/components/ui/ShareMenu';
+import Video from 'src/components/ui/Video';
 
 class ProjectPreview extends Component {
+    renderVideo(video) {
+      return(
+        <Video video={video} />
+      )
+    }
+
+    renderCarousel() {
+      return <div>this is carousel</div>
+    }
+
     render() {
       const project = this.props.project;
       console.log(project);
@@ -20,12 +31,14 @@ class ProjectPreview extends Component {
                 <i className={project.likeCount === 0 ? 'tpa-icon -heart' : 'tpa-icon -heart-filled'}/>
                 <span>{project.likeCount}</span>
               </a>
-              <a className="tpa-lastbox-items-item-screen-app">
-                <i className="tpa-icon -share"></i>
+              <a className='tpa-lastbox-items-item-screen-app'>
+                <i className='tpa-icon -share'></i>
               </a>
               <a ui-sref='project.projectDetails({id: project.permalink})' className='tpa-lastbox-items-item-body-title'>
-                <div ng-if='!project.video' screenshot='project.screens[0].url' size='296x525' className='tpa-lastbox-items-item-screen-img' />
                 <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>
+                {project.video ? this.renderVideo(project.video) : this.renderCarousel()}
+                {/*<div ng-if='!project.video' screenshot='project.screens[0].url' size='296x525' className='tpa-lastbox-items-item-screen-img' />
+                <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>*/}
               </a>
             </div>
           </div>
