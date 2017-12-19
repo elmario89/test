@@ -24,7 +24,7 @@ export function sendApiRequest(actionName, options = {}) {
         params: Object.assign({}, query, action.query)
     };
 
-    return fetch(`${BASE_URL}${url}?_fields=${fetchOptions.params._fields}&limit=${fetchOptions.params.limit}`)
+    return fetch(`${BASE_URL}${url}?_fields=${fetchOptions.params._fields}&skip=${fetchOptions.params.skip || 0}&limit=${fetchOptions.params.limit}`)
         .then(response => response.json())
         .then(winner => winner);
 }

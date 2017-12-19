@@ -15,7 +15,7 @@ class LatestNominees extends Component {
                   <div className='tpa-lastbox-items -first'>
                     {this.props.nominees.map(nominee => <ProjectPreview key={nominee._id} project={nominee} />)}
                   </div>
-                  <Link to='/winners' className='tpa-lastbox-more'>
+                  <Link to='/nominees' className='tpa-lastbox-more'>
                     <div className='tpa-lastbox-more-inner'>
                       <div className='tpa-lastbox-more-text'>Load<span>more</span></div>
                     </div>
