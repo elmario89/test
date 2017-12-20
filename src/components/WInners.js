@@ -10,7 +10,8 @@ class Winners extends Component {
         super();
 
         this.state = {
-            winners: null
+            winners: null,
+            totalCount: null
         }
 
         this.winnersLimit = 8;
@@ -20,12 +21,12 @@ class Winners extends Component {
 
     handlePaginate(page) {
         paginate(page, 'listWinners', this.winnersLimit)
-            .then(response => this.setState({ winners: response.result.items }));
+            .then(response => this.setState({ winners: response.result.items, totalCount: response.result.totalCount }));
     }
 
     componentWillMount() {
         paginate(0, 'listWinners', this.winnersLimit)
-            .then(response => this.setState({ winners: response.result.items }));
+            .then(response => this.setState({ winners: response.result.items, totalCount: response.result.totalCount }));
     }
 
     render() {
@@ -37,8 +38,16 @@ class Winners extends Component {
                       <div className='tpa-lastbox-items -grid'>
                         {this.state.winners ? this.state.winners.map(winner => <ProjectPreview key={winner._id}  project={winner} />) : null}
                       </div>
-                      
-                      <Paginator paginate={this.handlePaginate} />
+
+                      {
+                        this.state.totalCount ? 
+                        <Paginator 
+                          paginate={this.handlePaginate} 
+                          totalCount={this.state.totalCount}
+                          limit={this.winnersLimit}
+                        /> 
+                        : null
+                      }
                     </div>
                   </div>
                 </div>
