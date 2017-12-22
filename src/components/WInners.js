@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import ProjectPreview from 'src/components/ProjectPreview';
-import Paginator from 'src/components/includes/Paginator';
+import Paginator from 'src/components/Shared/Paginator';
 
 import {paginate} from 'src/services/paginateService';
 

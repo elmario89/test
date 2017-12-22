@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
@@ -57,14 +56,7 @@ module.exports = {
                 exclude: [
                     path.resolve(__dirname, "node_modules"),
                 ],
-                loader: "eslint-loader"
-            },
-            {
-                test: /\.jsx?$/,
-                exclude: [
-                    path.resolve(__dirname, "node_modules"),
-                ],
-                loader: "babel-loader"
+                loaders: ["babel-loader","eslint-loader"]
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|gif|mp4|jpg)$/,
