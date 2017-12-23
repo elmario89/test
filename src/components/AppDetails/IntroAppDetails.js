@@ -6,10 +6,6 @@ import {formatDate} from 'src/helpers';
 import ActionButtonSet from 'src/components/ui/ActionButtonSet';
 
 class IntroAppDetails extends Component {
-    constructor() {
-        super();
-    }
-
     renderDetails(app) {
         console.log('render', app);
         return (
