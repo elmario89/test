@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import {Link} from 'react-router-dom';
+
 import IntroRating from 'src/components/IntroRating';
 import ActionButtonSet from 'src/components/ui/ActionButtonSet';
 import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
@@ -14,7 +16,7 @@ class Intro extends Component {
         return (
           <section className='tpa-intro'>
               <div className='tpa-intro-body'>
-                  <a className='tpa-intro-link'></a>
+                  <Link to={`/appDetails/${winner._id}`} className='tpa-intro-link'></Link>
                   <div style={{backgroundColor: winner.screensBgColor}} className='tpa-intro-fill'></div>
                   <div className='tpa-intro-date'>{formatDate(winner.winDate)}</div>
                   <div className='tpa-intro-actions'>

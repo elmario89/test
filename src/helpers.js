@@ -7,3 +7,7 @@ export function formatDate(date) {
 
     return `${day} ${month}, ${year}`;
 }
+
+export function splitParagraphs(text) {
+    return text.split('\n').slice(0);
+}

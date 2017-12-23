@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import {formatDate} from 'src/helpers';
 
 import ActionButtonSet from 'src/components/ui/ActionButtonSet';
+import Splitbox from 'src/components/AppDetails/Splitbox';
 
 class IntroAppDetails extends Component {
     renderDetails(app) {
-        console.log('render', app);
         return (
             <section className='tpa-intro -small'>
                 <div className='tpa-intro-body'>
@@ -55,6 +55,17 @@ class IntroAppDetails extends Component {
             {
                 this.props.app ?
                 this.renderDetails(this.props.app)
+                : null
+            }
+
+            {
+                this.props.app ?
+                <Splitbox 
+                    desc={this.props.app.description}
+                    rates={this.props.app.rates}
+                    screens={this.props.app.screens}
+                    screensBgColor={this.props.app.screensBgColor}
+                />
                 : null
             }
           </div>

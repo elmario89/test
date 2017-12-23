@@ -5,6 +5,7 @@ export const APP_FIELDS = [
     'platform',
     'developer(name,url)',
     'collaborator(name,url)',
+    'description',
     'screens',
     'video',
     'storeUrl',
