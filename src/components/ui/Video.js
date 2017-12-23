@@ -12,6 +12,7 @@ class Video extends Component {
     }
 
     render() {
+        console.log(this.props);
         const video = this.props.video;
         return (
           <div>

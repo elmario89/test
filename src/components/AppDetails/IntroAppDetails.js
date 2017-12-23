@@ -61,6 +61,7 @@ class IntroAppDetails extends Component {
             {
                 this.props.app ?
                 <Splitbox 
+                    video={this.props.app.video}
                     desc={this.props.app.description}
                     rates={this.props.app.rates}
                     screens={this.props.app.screens}
