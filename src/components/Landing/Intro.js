@@ -26,7 +26,7 @@ class Intro extends Component {
                           </div>
                       </a>
 
-                      <a target='_blank' className='tpa-btn_transparent'>
+                      <a target='_blank' href={winner.storeUrl} className='tpa-btn_transparent'>
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-hover'></div>
                           <div className='tpa-btn_transparent-inner'>

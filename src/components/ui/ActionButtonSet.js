@@ -8,7 +8,7 @@ class ActionButtonSet extends Component {
               <button className='tpa-btn_transparent'>
                   <div className='tpa-btn_transparent-hover'></div>
                   <div className='tpa-btn_transparent-hover'></div>
-                  <div className='tpa-btn_transparent-inner -square'>
+                  <div className={this.props.inverse ? 'tpa-btn_transparent-inner -square -inverse' : 'tpa-btn_transparent-inner -square' }>
                       <i className='tpa-icon -share' />
                   </div>
               </button>
@@ -16,7 +16,10 @@ class ActionButtonSet extends Component {
               <button className='tpa-btn_transparent -xs'>
                   <div className='tpa-btn_transparent-hover'></div>
                   <div className='tpa-btn_transparent-hover'></div>
-                  <div className='tpa-btn_transparent-inner -like'><i className='-heart tpa-icon' /><span>{this.props.likeCount}</span></div>
+                  <div className={this.props.inverse ? 'tpa-btn_transparent-inner -like -inverse' : 'tpa-btn_transparent-inner -like' }>
+                      <i className='-heart tpa-icon' />
+                      <span>{this.props.likeCount}</span>
+                  </div>
               </button>
           </div>
         )
@@ -24,7 +27,8 @@ class ActionButtonSet extends Component {
 }
 
 ActionButtonSet.propTypes = {
-    likeCount: PropTypes.number.isRequired
+    likeCount: PropTypes.number.isRequired,
+    inverse: PropTypes.bool
 };
 
 export default ActionButtonSet;

@@ -35,10 +35,10 @@ class ProjectPreview extends Component {
               <a className='tpa-lastbox-items-item-screen-app'>
                 <i className='tpa-icon -share'></i>
               </a>
-              <a ui-sref='project.projectDetails({id: project.permalink})' className='tpa-lastbox-items-item-body-title'>
+              <Link to={`/appDetails/${project._id}`} className='tpa-lastbox-items-item-body-title'>
                 <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>
                 {project.video ? this.renderVideo(project.video) : this.renderCarousel(project)}
-              </a>
+              </Link>
             </div>
           </div>
           <div className='tpa-lastbox-items-item-body'>
