@@ -799,8 +799,8 @@
                 @media (min-width: $screen-sm) {
                     margin:0 0 0 40px;
 
-                    overflow:hidden;
-                    overflow-x:auto;
+                    overflow:hidden !important;
+                    overflow-x:auto !important;
 
                     -ms-overflow-style: none;
                     overflow: -moz-scrollbars-none;
@@ -815,6 +815,17 @@
 
         .owl-item {
             opacity: .3 !important;
+
+            .tpa-carousel-item {
+                video {
+                    height:328px;
+                    width: auto;
+
+                    @media (min-width: $screen-sm) {
+                        height:525px;
+                    }
+                }
+            }
 
             &.center {
                 opacity: 1 !important;

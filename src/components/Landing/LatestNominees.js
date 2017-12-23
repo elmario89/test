@@ -7,7 +7,7 @@ import ProjectPreview from 'src/components/ProjectPreview';
 class LatestNominees extends Component {
     render() {
         return (
-          <section className='tpa-lastbox'>
+          <section className={this.props.internal ? 'tpa-lastbox -internal' : 'tpa-lastbox'}>
             <div className='tpa-lastbox-body'>
               <div className='tpa-lastbox-wrap'>
                 <div className='tpa-lastbox-container'>
@@ -29,7 +29,8 @@ class LatestNominees extends Component {
 }
 
 LatestNominees.propTypes = {
-    nominees: PropTypes.array.isRequired
+    nominees: PropTypes.array.isRequired,
+    internal: PropTypes.bool
 };
 
 export default LatestNominees;

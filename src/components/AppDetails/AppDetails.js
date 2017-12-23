@@ -8,7 +8,8 @@ class AppDetails extends Component {
         super();
 
         this.state = {
-            app: null
+            app: null,
+            latestNominees: null
         }
     }
     componentWillMount() {
@@ -17,19 +18,22 @@ class AppDetails extends Component {
         sendApiRequest('getApp', {
             params: {id}
         })
-            .then(response => {
-                console.log(response.result);
-                return response;
-            })
             .then(response => this.setState({ app: response.result }));
+
+        sendApiRequest('listNominees', {
+            query: {
+                limit: 4
+            }
+        })
+            .then(response => this.setState({ latestNominees: response.result.items }));
     }
 
     render() {
         return (
           <div>
             {
-                this.state.app ? 
-                <IntroAppDetails app={this.state.app} />
+                this.state.app && this.state.latestNominees ? 
+                <IntroAppDetails app={this.state.app} nominees={this.state.latestNominees} />
                 : null
             }
           </div>

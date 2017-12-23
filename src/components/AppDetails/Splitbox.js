@@ -5,6 +5,7 @@ import {splitParagraphs} from 'src/helpers';
 
 import IntroRating from 'src/components/IntroRating';
 import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
+import LatestNominees from 'src/components/Landing/LatestNominees';
 
 class Splitbox extends Component {
     renderParagraphs(desc) {
@@ -18,18 +19,21 @@ class Splitbox extends Component {
     render() {
         const project = this.props;
         return (
-          <div className='tpa-splitbox -lg'>
-            <div style={{backgroundColor: project.screensBgColor}} className='tpa-splitbox-fill'></div>
-            <div className='tpa-splitbox-inner'>
-                {this.renderParagraphs(project.desc)}
+            <div>
+                <div className='tpa-splitbox -lg'>
+                    <div style={{backgroundColor: project.screensBgColor}} className='tpa-splitbox-fill'></div>
+                    <div className='tpa-splitbox-inner'>
+                        {this.renderParagraphs(project.desc)}
 
-                <IntroRating rates={project.rates} internal={true} />
+                        {this.props.rates ? <IntroRating rates={project.rates} internal={true} /> : null}
 
-                <div className='tpa-splitbox-slider'>
-                    <OwlCarouselWrapper video={this.props.video} screens={this.props.screens} appDetails='appDetails' />
+                        <div className='tpa-splitbox-slider'>
+                            <OwlCarouselWrapper video={this.props.video} size='296x525' screens={this.props.screens} appDetails='appDetails' />
+                        </div>
+                    </div>
                 </div>
+                <LatestNominees nominees={this.props.nominees} internal={true} />
             </div>
-          </div>
         )
     }
 }
@@ -37,9 +41,10 @@ class Splitbox extends Component {
 Splitbox.propTypes = {
     video: PropTypes.object,
     desc: PropTypes.string.isRequired,
-    rates: PropTypes.object.isRequired,
+    rates: PropTypes.object,
     screens: PropTypes.array.isRequired,
-    screensBgColor: PropTypes.string.isRequired
+    screensBgColor: PropTypes.string.isRequired,
+    nominees: PropTypes.array.isRequired
 };
 
 export default Splitbox;

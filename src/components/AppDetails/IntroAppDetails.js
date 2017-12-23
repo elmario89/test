@@ -59,13 +59,14 @@ class IntroAppDetails extends Component {
             }
 
             {
-                this.props.app ?
+                this.props.app && this.props.nominees ?
                 <Splitbox 
                     video={this.props.app.video}
                     desc={this.props.app.description}
                     rates={this.props.app.rates}
                     screens={this.props.app.screens}
                     screensBgColor={this.props.app.screensBgColor}
+                    nominees={this.props.nominees}
                 />
                 : null
             }
@@ -75,7 +76,8 @@ class IntroAppDetails extends Component {
 }
 
 IntroAppDetails.propTypes = {
-    app: PropTypes.object.isRequired
+    app: PropTypes.object.isRequired,
+    nominees: PropTypes.array.isRequired
 };
 
 export default IntroAppDetails;

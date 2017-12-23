@@ -20,12 +20,17 @@ class OwlCarouselWrapper extends Component {
         )
     }
 
-    renderVideo(video) {
+    renderVideo(video, appDetails) {
         return (
           <div key={video._id} className='tpa-carousel-item'>
-              <div className='tpa-carousel-item-inner'>
+              {
+                appDetails ? 
+                <Video video={video} />
+                :
+                <div className='tpa-carousel-item-inner'>
                   <Video video={video} />
-              </div>
+                </div>
+              }
           </div>
         )
     }
@@ -68,7 +73,7 @@ class OwlCarouselWrapper extends Component {
                       className='tpa-carousel'
                       {...options[this.props.appDetails]}
                     >
-                        {this.props.video ? this.renderVideo(this.props.video) : null}
+                        {this.props.video ? this.renderVideo(this.props.video, appDetails) : null}
                         {this.props.screens.map(screen => this.renderImage(screen, size, appDetails))}
                     </OwlCarousel>
                 : 

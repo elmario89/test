@@ -7,16 +7,16 @@ class Video extends Component {
         this.state = {videoIsLoaded: false}
     }
 
-    handleCanPlay() {
+    handleCanPlay(e) {
         this.setState({videoIsLoaded: true})
+        e.target.play();
     }
 
     render() {
-        console.log(this.props);
         const video = this.props.video;
         return (
           <div>
-            <video onCanPlay={() => this.handleCanPlay()} loop muted className='tpa-carousel-item-video'>
+            <video onCanPlay={(e) => this.handleCanPlay(e)} loop muted className='tpa-carousel-item-video'>
                 <source src={video.url} type='video/mp4' />
                 Your browser doesn't support the video tag
             </video>
