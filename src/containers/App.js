@@ -7,7 +7,7 @@ import Landing from 'src/components/Landing/Landing';
 import NotFound from 'src/components/NotFound';
 import Winners from 'src/components/Winners';
 import Nominees from 'src/components/Nominees';
-import AppDetails from 'src/components/AppDetails';
+import AppDetails from 'src/components/AppDetails/AppDetails';
 
 const App = () => {
     return (
