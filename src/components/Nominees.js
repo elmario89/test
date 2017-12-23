@@ -10,7 +10,8 @@ class Nominees extends Component {
         super();
 
         this.state = {
-            nominees: null
+            nominees: null,
+            totalCount: null
         }
 
         this.nomineesLimit = 8;
@@ -20,12 +21,12 @@ class Nominees extends Component {
 
     handlePaginate(page) {
         paginate(page, 'listNominees', this.nomineesLimit)
-            .then(response => this.setState({ nominees: response.result.items }));
+            .then(response => this.setState({ nominees: response.result.items, totalCount: response.result.totalCount }));
     }
 
     componentWillMount() {
         paginate(0, 'listNominees', this.nomineesLimit)
-            .then(response => this.setState({ nominees: response.result.items }));
+            .then(response => this.setState({ nominees: response.result.items, totalCount: response.result.totalCount }));
     }
 
     render() {
@@ -38,7 +39,16 @@ class Nominees extends Component {
                         {this.state.nominees ? this.state.nominees.map(noninee => <ProjectPreview key={noninee._id}  project={noninee} />) : null}
                       </div>
 
-                      <Paginator paginate={this.handlePaginate} />
+                        {
+                            this.state.totalCount ? 
+                            <Paginator 
+                                paginate={this.handlePaginate}
+                                totalCount={this.state.totalCount}
+                                limit={this.nomineesLimit}
+                            /> 
+                            : null
+                        }
+                      
                     </div>
                   </div>
                 </div>
