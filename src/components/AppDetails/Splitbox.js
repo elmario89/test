@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import {splitParagraphs} from 'src/helpers';
 
+import IntroRating from 'src/components/IntroRating';
+
 class Splitbox extends Component {
     renderParagraphs(desc) {
         return (
@@ -11,7 +13,7 @@ class Splitbox extends Component {
             </div>
         )
     }
-    
+
     render() {
         const project = this.props;
         return (
@@ -19,6 +21,8 @@ class Splitbox extends Component {
             <div style={{backgroundColor: project.screensBgColor}} className="tpa-splitbox-fill"></div>
             <div className="tpa-splitbox-inner">
                 {this.renderParagraphs(project.desc)}
+
+                <IntroRating rates={project.rates} internal={true} />
             </div>
           </div>
         )

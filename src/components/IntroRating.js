@@ -6,7 +6,7 @@ class IntroRating extends Component {
         const rates = this.props.rates;
 
         return (
-          <div className='tpa-intro-rating'>
+          <div className={this.props.internal ? 'tpa-intro-rating -internal' : 'tpa-intro-rating'} >
               <div className='tpa-intro-rating-box'>
                   <div className='tpa-intro-rating-item'>
                       <div className='tpa-intro-rating-num'><span>{rates.common}</span></div>
@@ -27,7 +27,8 @@ class IntroRating extends Component {
 }
 
 IntroRating.propTypes = {
-    rates: PropTypes.object.isRequired
+    rates: PropTypes.object.isRequired,
+    internal: PropTypes.bool
 };
 
 export default IntroRating;
