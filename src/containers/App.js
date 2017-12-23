@@ -7,6 +7,7 @@ import Landing from 'src/components/Landing/Landing';
 import NotFound from 'src/components/NotFound';
 import Winners from 'src/components/Winners';
 import Nominees from 'src/components/Nominees';
+import AppDetails from 'src/components/AppDetails';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                   <Route exact path='/' component={Landing} />
                   <Route exact path='/winners' component={Winners} />
                   <Route exact path='/nominees' component={Nominees} />
+                  <Route path='/appDetails/:id' component={AppDetails} />
                   <Route component={NotFound} />
               </Switch>
           </div>

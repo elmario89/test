@@ -8,12 +8,14 @@ class Video extends Component {
     }
 
     componentDidMount() {
-        const video = this.refs.videoFile;
+        if (this.refs.videoFile) {
+            const video = this.refs.videoFile;
 
-        video.oncanplay = function() {
-            this.setState({videoIsLoaded: true});
-            video.play();
-        }.bind(this);
+            video.oncanplay = function() {
+                this.setState({videoIsLoaded: true});
+                video.play();
+            }.bind(this);
+        }
     }
 
     render() {

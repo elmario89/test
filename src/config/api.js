@@ -31,5 +31,12 @@ export const actions = {
         query: {
             _fields: `items(${APP_FIELDS})`
         }
+    },
+    getApp: {
+        method: 'GET',
+        url: '/apps/:id',
+        query: {
+            _fields: APP_FIELDS
+        }
     }
 };

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import ShareMenu from 'src/components/ui/ShareMenu';
 import Video from 'src/components/ui/Video';
@@ -24,6 +24,7 @@ class ProjectPreview extends Component {
         <div className='tpa-lastbox-items-item'>
           <div>
           <div style={{backgroundColor: project.screensBgColor}} className='tpa-lastbox-items-item-screen'>
+            <Link to={`/appDetails/${project._id}`} className='tpa-lastbox-items-item-screen-link'></Link>
             <div className='tpa-lastbox-items-item-screen-inner'>
               <ShareMenu />
               {/*<share-menu url='project.storeUrl' open='$ctrl.shareOpen[$index]' type='common' permalink='project.permalink' name='project.name' />*/}
