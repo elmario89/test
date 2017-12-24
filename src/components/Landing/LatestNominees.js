@@ -13,7 +13,7 @@ class LatestNominees extends Component {
                 <div className='tpa-lastbox-container'>
                   <div className='tpa-lastbox-title'>Latest NOMINEES</div>
                   <div className='tpa-lastbox-items -first'>
-                    {this.props.nominees.map(nominee => <ProjectPreview key={nominee._id} project={nominee} />)}
+                    {this.props.nominees.map(nominee => <ProjectPreview videoPadded={true} key={nominee._id} project={nominee} />)}
                   </div>
                   {
                     !this.props.internal ? 

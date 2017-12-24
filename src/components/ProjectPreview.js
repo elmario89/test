@@ -11,7 +11,7 @@ import {formatDate} from 'src/helpers';
 class ProjectPreview extends Component {
     renderVideo(video) {
       return(
-        <Video video={video} />
+        <Video video={video} padded={this.props.videoPadded} />
       )
     }
 
@@ -38,7 +38,6 @@ class ProjectPreview extends Component {
                 <i className='tpa-icon -share'></i>
               </a>
               <Link to={`/appDetails/${project._id}`} className='tpa-lastbox-items-item-body-title'>
-                <div ng-if='project.video' className='tpa-lastbox-items-item-screen-img'></div>
                 {project.video ? this.renderVideo(project.video) : this.renderCarousel(project)}
               </Link>
             </div>
@@ -85,7 +84,8 @@ class ProjectPreview extends Component {
 
 ProjectPreview.propTypes = {
     project: PropTypes.object.isRequired,
-    extended: PropTypes.bool
+    extended: PropTypes.bool,
+    videoPadded: PropTypes.bool
 };
 
 export default ProjectPreview;

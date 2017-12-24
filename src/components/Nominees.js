@@ -41,7 +41,7 @@ class Nominees extends Component {
                   <div className='tpa-lastbox-wrap -equal'>
                     <div className='tpa-lastbox-container'>
                       <div className='tpa-lastbox-items -grid'>
-                        {this.state.nominees ? this.state.nominees.map(noninee => <ProjectPreview key={noninee._id}  project={noninee} />) : null}
+                        {this.state.nominees ? this.state.nominees.map(noninee => <ProjectPreview videoPadded={true} key={noninee._id}  project={noninee} />) : null}
                       </div>
 
                         {

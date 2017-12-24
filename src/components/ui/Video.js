@@ -15,7 +15,7 @@ class Video extends Component {
     render() {
         const video = this.props.video;
         return (
-          <div>
+          <div className={this.props.padded ? 'tpa-video-wrapper' : null}>
             <video onCanPlay={(e) => this.handleCanPlay(e)} loop muted className='tpa-carousel-item-video'>
                 <source src={video.url} type='video/mp4' />
                 Your browser doesn't support the video tag
@@ -27,7 +27,8 @@ class Video extends Component {
 }
 
 Video.propTypes = {
-    video: PropTypes.object.isRequired
+    video: PropTypes.object.isRequired,
+    padded: PropTypes.bool
 };
 
 export default Video;
