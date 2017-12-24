@@ -12,6 +12,21 @@ class AppDetails extends Component {
             latestNominees: null
         }
     }
+    componentWillReceiveProps(newProps) {
+        const id = newProps.match.params.id;
+
+        if (id === this.state.app._id) {
+            return false;
+        }
+
+        sendApiRequest('getApp', {
+            params: {id}
+        })
+            .then(response => {
+                this.setState({ app: response.result })
+                window.scrollTo(0,0);
+            });
+    }
     componentWillMount() {
         const id = this.props.match.params.id;
 
