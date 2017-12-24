@@ -18,7 +18,7 @@ class Nominees extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const page = parseFloat(newProps.match.params.page - 1);
+        const page = parseFloat(newProps.match.params.page) - 1;
 
         paginate(page, 'listNominees', this.nomineesLimit)
             .then(response => {

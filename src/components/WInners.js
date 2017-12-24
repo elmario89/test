@@ -18,7 +18,7 @@ class Winners extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const page = parseFloat(newProps.match.params.page - 1);
+        const page = parseFloat(newProps.match.params.page) - 1;
 
         paginate(page, 'listWinners', this.winnersLimit)
             .then(response => {
