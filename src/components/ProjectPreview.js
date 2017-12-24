@@ -6,6 +6,8 @@ import ShareMenu from 'src/components/ui/ShareMenu';
 import Video from 'src/components/ui/Video';
 import OwlCarouselWrapper from 'src/components/OwlCarouselWrapper';
 
+import {formatDate} from 'src/helpers';
+
 class ProjectPreview extends Component {
     renderVideo(video) {
       return(
@@ -52,6 +54,27 @@ class ProjectPreview extends Component {
                   <a href={project.developer.url} target='_blank'>{project.developer.name}</a>
                 </div>
               </div>
+              {
+                this.props.extended ? 
+                <div className='tpa-lastbox-items-item-body-row -indent'>
+                  <div className='tpa-lastbox-items-item-body-col -middle'></div>
+                  <div className='tpa-lastbox-items-item-body-col -middle'>
+                    <div className='tpa-lastbox-items-item-body-date'>
+                      {formatDate(project.winDate)}
+                      <span>AOTD</span>
+                    </div>
+                  </div>
+                  <div className='tpa-lastbox-items-item-body-col -middle -right'>
+                    <div className='tpa-lastbox-items-item-body-more'>
+                      <Link to={`/appDetails/${project._id}`}>
+                        <span>See case</span>
+                        <i className='tpa-icon -chevron-right' />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                : null
+              }
             </div>
           </div>
         </div>
@@ -61,7 +84,8 @@ class ProjectPreview extends Component {
 }
 
 ProjectPreview.propTypes = {
-    project: PropTypes.object.isRequired
+    project: PropTypes.object.isRequired,
+    extended: PropTypes.bool
 };
 
 export default ProjectPreview;

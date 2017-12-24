@@ -28,7 +28,7 @@ class Nominees extends Component {
     }
 
     componentWillMount() {
-        const page = this.props.match.params.page;
+        const page = this.props.match.params.page - 1;
 
         paginate(page, 'listNominees', this.nomineesLimit)
             .then(response => this.setState({ nominees: response.result.items, totalCount: response.result.totalCount }));

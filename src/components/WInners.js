@@ -28,7 +28,7 @@ class Winners extends Component {
     }
 
     componentWillMount() {
-        const page = this.props.match.params.page;
+        const page = this.props.match.params.page - 1;
 
         paginate(page, 'listWinners', this.winnersLimit)
             .then(response => {
@@ -43,7 +43,7 @@ class Winners extends Component {
                   <div className='tpa-lastbox-wrap -equal'>
                     <div className='tpa-lastbox-container'>
                       <div className='tpa-lastbox-items -grid'>
-                        {this.state.winners ? this.state.winners.map(winner => <ProjectPreview key={winner._id}  project={winner} />) : null}
+                        {this.state.winners ? this.state.winners.map(winner => <ProjectPreview key={winner._id} extended={true} project={winner} />) : null}
                       </div>
 
                       {

@@ -10,11 +10,9 @@ const rootEl = document.getElementById('root');
 
 const renderContainer = Component => {
     render(
-        <BrowserRouter>
-            <HashRouter>
-                <Component />
-            </HashRouter>
-        </BrowserRouter>,
+        <HashRouter>
+            <Component />
+        </HashRouter>,
         rootEl
     )
 }
