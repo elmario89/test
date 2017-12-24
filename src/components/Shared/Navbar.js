@@ -39,7 +39,7 @@ class Navbar extends Component {
                             Nominees
                         </Link>
 
-                        <Link to='/' className={this.checkActive('/jury')}>
+                        <Link to='/jury' className={this.checkActive('/jury')}>
                             Jury
                         </Link>
 
@@ -49,6 +49,7 @@ class Navbar extends Component {
 
                         <button className='tpa-btn_primary -nav'>
                             <span>Submit the app</span>
+                            <i className='tpa-icon -chevron-right'></i>
                         </button>
                     </div>
                   </div>
