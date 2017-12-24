@@ -17,7 +17,7 @@ class LatestNominees extends Component {
                   </div>
                   {
                     !this.props.internal ? 
-                    <Link to='/nominees' className='tpa-lastbox-more'>
+                    <Link to='/nominees/1' className='tpa-lastbox-more'>
                       <div className='tpa-lastbox-more-inner'>
                         <div className='tpa-lastbox-more-text'>Load<span>more</span></div>
                       </div>

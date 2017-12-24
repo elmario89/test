@@ -15,18 +15,25 @@ class Winners extends Component {
         }
 
         this.winnersLimit = 8;
-
-        this.handlePaginate = this.handlePaginate.bind(this);
     }
 
-    handlePaginate(page) {
+    componentWillReceiveProps(newProps) {
+        const page = parseFloat(newProps.match.params.page - 1);
+
         paginate(page, 'listWinners', this.winnersLimit)
-            .then(response => this.setState({ winners: response.result.items, totalCount: response.result.totalCount }));
+            .then(response => {
+                this.setState({ winners: response.result.items, totalCount: response.result.totalCount });
+                window.scrollTo(0, 0);
+            })
     }
 
     componentWillMount() {
-        paginate(0, 'listWinners', this.winnersLimit)
-            .then(response => this.setState({ winners: response.result.items, totalCount: response.result.totalCount }));
+        const page = this.props.match.params.page;
+
+        paginate(page, 'listWinners', this.winnersLimit)
+            .then(response => {
+                this.setState({ winners: response.result.items, totalCount: response.result.totalCount });
+            });
     }
 
     render() {
@@ -41,10 +48,10 @@ class Winners extends Component {
 
                       {
                         this.state.totalCount ? 
-                        <Paginator 
-                          paginate={this.handlePaginate} 
+                        <Paginator
                           totalCount={this.state.totalCount}
                           limit={this.winnersLimit}
+                          route='/winners/'
                         /> 
                         : null
                       }

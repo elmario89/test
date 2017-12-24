@@ -16,8 +16,8 @@ const App = () => {
           <div className='tpa-navbar-outer'>
               <Switch>
                   <Route exact path='/' component={Landing} />
-                  <Route exact path='/winners' component={Winners} />
-                  <Route exact path='/nominees' component={Nominees} />
+                  <Route exact path='/winners/:page' component={Winners} />
+                  <Route exact path='/nominees/:page' component={Nominees} />
                   <Route path='/appDetails/:id' component={AppDetails} />
                   <Route component={NotFound} />
               </Switch>

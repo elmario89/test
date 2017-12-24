@@ -15,17 +15,22 @@ class Nominees extends Component {
         }
 
         this.nomineesLimit = 8;
-
-        this.handlePaginate = this.handlePaginate.bind(this);
     }
 
-    handlePaginate(page) {
+    componentWillReceiveProps(newProps) {
+        const page = parseFloat(newProps.match.params.page - 1);
+
         paginate(page, 'listNominees', this.nomineesLimit)
-            .then(response => this.setState({ nominees: response.result.items, totalCount: response.result.totalCount }));
+            .then(response => {
+              this.setState({ nominees: response.result.items, totalCount: response.result.totalCount });
+              window.scrollTo(0, 0);
+            })
     }
 
     componentWillMount() {
-        paginate(0, 'listNominees', this.nomineesLimit)
+        const page = this.props.match.params.page;
+
+        paginate(page, 'listNominees', this.nomineesLimit)
             .then(response => this.setState({ nominees: response.result.items, totalCount: response.result.totalCount }));
     }
 
@@ -41,10 +46,10 @@ class Nominees extends Component {
 
                         {
                             this.state.totalCount ? 
-                            <Paginator 
-                                paginate={this.handlePaginate}
+                            <Paginator
                                 totalCount={this.state.totalCount}
                                 limit={this.nomineesLimit}
+                                route='/nominees/'
                             /> 
                             : null
                         }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class Paginator extends Component {
     constructor() {
@@ -18,11 +19,6 @@ class Paginator extends Component {
             .map((e, i) => i + 1);
 
         this.filterPages(pagesCounter, page);
-    }
-
-    handlePaginateClick(e, page) {
-        e.preventDefault();
-        this.props.paginate(page);
     }
 
     filterPages(array, n) {
@@ -55,8 +51,13 @@ class Paginator extends Component {
                 <i className='tpa-icon -chevron-left'></i>
               </a>
 
-              {pagesArray ? pagesArray.map(page => <a key={page} className='tpa-paginator-item' onClick={(e) => this.handlePaginateClick(e, page)}>{page}</a>) : null}
-
+              {
+                pagesArray ? 
+                pagesArray.map(page => {
+                    return <Link to={`${this.props.route}${page}`} key={page} className='tpa-paginator-item'>{page}</Link>;
+                }) 
+                : null
+              }
               <a href='#' className='tpa-paginator-item -next'>
                 <i className='tpa-icon -chevron-right'></i>
               </a>
@@ -69,7 +70,7 @@ class Paginator extends Component {
 Paginator.propTypes = {
     totalCount: PropTypes.number.isRequired,
     limit: PropTypes.number.isRequired,
-    paginate: PropTypes.func.isRequired
+    route: PropTypes.string.isRequired
 };
 
 export default Paginator;

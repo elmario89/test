@@ -11,7 +11,7 @@ class Navbar extends Component {
     }
 
     checkActive(location) {
-        return location === this.props.location.pathname ? 'tpa-navbar-nav-menu-item -active' : 'tpa-navbar-nav-menu-item';
+        return location.split('/')[1] === this.props.location.pathname.split('/')[1] ? 'tpa-navbar-nav-menu-item -active' : 'tpa-navbar-nav-menu-item';
     }
 
     render() {
@@ -31,11 +31,11 @@ class Navbar extends Component {
                             <span>AOTM<b> Aug '17</b></span>
                         </Link>
 
-                        <Link to='/winners' className={this.checkActive('/winners')}>
+                        <Link to='/winners/1' className={this.checkActive('/winners')}>
                             Winners
                         </Link>
 
-                        <Link to='/nominees' className={this.checkActive('/nominees')}>
+                        <Link to='/nominees/1' className={this.checkActive('/nominees')}>
                             Nominees
                         </Link>
 
