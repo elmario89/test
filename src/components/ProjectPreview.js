@@ -46,8 +46,10 @@ class ProjectPreview extends Component {
               <div className='tpa-lastbox-items-item-body-col'>
                 <i className={project.platform === 'ios' ? '-apple tpa-icon' : '-google-play tpa-icon'} />
               </div>
-              <div className='tpa-lastbox-items-item-body-col'><a ui-sref='project.appDetails({id: project.permalink})' className='tpa-lastbox-items-item-body-title'>{project.name}</a>
-                <div className='tpa-lastbox-items-item-body-author'>by <a ng-href='{::project.developer.url}' target='_blank'>{project.developer.name} </a>
+              <div className='tpa-lastbox-items-item-body-col'>
+                <Link to={`/appDetails/${project._id}`} className='tpa-lastbox-items-item-body-title'>{project.name}</Link>
+                <div className='tpa-lastbox-items-item-body-author'>by&nbsp;
+                  <a href={project.developer.url} target='_blank'>{project.developer.name}</a>
                 </div>
               </div>
             </div>
