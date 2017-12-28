@@ -54,18 +54,21 @@ class Paginator extends Component {
     render() {
         const pagesArray = this.state.pages;
         const page = this.props.page;
+        const maxPage = this.props.totalCount / this.props.limit;
+        const route = this.props.route;
+
         return (
           <div className='tpa-lastbox-paginator'>
             {
               pagesArray ?
               <div className='tpa-paginator'>
-              <Link to={`${this.props.route}${page - 1}`} className='tpa-paginator-item -prev'>
+              <Link to={`${route}${page - 1}`} className='tpa-paginator-item -prev'>
                 <i className='tpa-icon -chevron-left'></i>
               </Link>
 
               {
                 page >= 5 && !this.state.shrinked ?
-                <Link to={`${this.props.route}1`} className='tpa-paginator-item'>1</Link>
+                <Link to={`${route}1`} className='tpa-paginator-item'>1</Link>
                 : null
               }
 
@@ -78,24 +81,24 @@ class Paginator extends Component {
               {
                 pagesArray ? 
                 pagesArray.map(page => {
-                    return <Link to={`${this.props.route}${page}`} key={page} className='tpa-paginator-item'>{page}</Link>;
+                    return <Link to={`${route}${page}`} key={page} className={this.props.page === page ? 'tpa-paginator-item -active' : 'tpa-paginator-item'}>{page}</Link>;
                 }) 
                 : null
               }
 
               {
-                page >= Math.ceil((this.props.totalCount / this.props.limit) - 4) && !this.state.shrinked ?
+                page >= Math.ceil(maxPage - 4) && !this.state.shrinked ?
                 null
                 : <span className='tpa-paginator-item -dots'>...</span>
               }
 
               {
                   !this.state.shrinked ?
-                  <Link className='tpa-paginator-item' to={`${this.props.route}${Math.ceil(this.props.totalCount/this.props.limit)}`}>{Math.ceil(this.props.totalCount/this.props.limit)}</Link>
+                  <Link className={this.props.page === Math.ceil(maxPage) ? 'tpa-paginator-item -active' : 'tpa-paginator-item'} to={`${route}${Math.ceil(maxPage)}`}>{Math.ceil(maxPage)}</Link>
                   : null
               }
 
-              <Link to={`${this.props.route}${page + 1}`} className='tpa-paginator-item -next'>
+              <Link to={`${route}${page + 1}`} className='tpa-paginator-item -next'>
                 <i className='tpa-icon -chevron-right'></i>
               </Link>
             </div>

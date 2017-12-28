@@ -50,6 +50,7 @@ class Nominees extends Component {
                                 totalCount={this.state.totalCount}
                                 limit={this.nomineesLimit}
                                 route='/nominees/'
+                                page={parseFloat(this.props.match.params.page)}
                             /> 
                             : null
                         }
