@@ -69,8 +69,6 @@ class Paginator extends Component {
                 : null
               }
 
-              <span>{pagesArray}</span>
-
               {
                 page > 5 && !this.state.shrinked ?
                 <span className='tpa-paginator-item -dots'>...</span>
@@ -86,14 +84,14 @@ class Paginator extends Component {
               }
 
               {
-                page >= pagesArray.length - 4 && this.state.shrinked ?
+                page >= Math.ceil((this.props.totalCount / this.props.limit) - 4) && !this.state.shrinked ?
                 null
                 : <span className='tpa-paginator-item -dots'>...</span>
               }
 
               {
                   !this.state.shrinked ?
-                  <Link className='tpa-paginator-item' to={`${this.props.route}${pagesArray.length}`}>{Math.ceil(this.props.totalCount/this.props.limit)}</Link>
+                  <Link className='tpa-paginator-item' to={`${this.props.route}${Math.ceil(this.props.totalCount/this.props.limit)}`}>{Math.ceil(this.props.totalCount/this.props.limit)}</Link>
                   : null
               }
 
