@@ -4,7 +4,15 @@ import PropTypes from 'prop-types';
 import OwlCarousel from 'react-owl-carousel';
 import Video from 'src/components/ui/Video';
 
+// import $ from ‘jquery’;
+
 class OwlCarouselWrapper extends Component {
+    constructor() {
+        super();
+
+        this.handleHover = this.handleHover.bind(this);
+    }
+
     renderImage(screen, size, appDetails) {
         const url = `${screen.url}/${size}`;
 
@@ -33,6 +41,32 @@ class OwlCarouselWrapper extends Component {
               }
           </div>
         )
+    }
+
+    fireEvent(elem, type, carousel) {
+      console.log(elem);
+      const evt = elem.createEvent('Events');
+
+      evt.initEvent( type, true, true, window, 1);
+
+      carousel.dispatchEvent(evt);
+    }
+
+    handleHover(e, id) {
+      // let evt = e.createEvent('Events');
+
+      // evt.initEvent( type, true, true, window, 1);
+
+      // elem.dispatchEvent(evt);
+      // console.log(e.target, id);
+      // const carousel = document.querySelector(`#${id}`);
+      // this.fireEvent(document, 'add.owl.carousel', carousel);
+        // .trigger('add.owl.carousel', ['<div class='item'><p>1</p></div>'])
+        // .trigger('refresh.owl.carousel');
+        // .trigger('add.owl.carousel', ['<div class='item'><p>1</p></div>'])
+        // .trigger('refresh.owl.carousel');
+
+      // e.target.trigger('add.owl.carousel', [<div>1</div>])
     }
 
     render() {
@@ -78,11 +112,14 @@ class OwlCarouselWrapper extends Component {
                     </OwlCarousel>
                 : 
                   <OwlCarousel
+                    id={`owl-carousel${this.props.screens[0]._id}`}
                     className='tpa-carousel'
                     {...options['common']}
+                    onMouseEnter={(e) => this.handleHover(e, `owl-carousel${this.props.screens[0]._id}`)}
                   >
-                      {this.props.video ? this.renderVideo(this.props.video) : null}
+                      {/*{this.props.video ? this.renderVideo(this.props.video) : null}*/}
                       {this.props.screens.map(screen => this.renderImage(screen, size))}
+                      {this.renderImage(this.props.screens[0], size)}
                   </OwlCarousel>
                 }
               </div>

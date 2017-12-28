@@ -8,12 +8,22 @@ class Paginator extends Component {
 
         this.state = {
             pages: null,
-            shrinked: null
+            shrinked: null,
+            page: null
         }
     }
 
+    componentWillReceiveProps() {
+      const page = this.props.page;
+      const pagesCounter = Array(Math.ceil(this.props.totalCount / this.props.limit))
+          .fill()
+          .map((e, i) => i + 1);
+
+      this.filterPages(pagesCounter, page);
+    }
+
     componentDidMount() {
-        const page = 2;
+        const page = this.props.page;
         const pagesCounter = Array(Math.ceil(this.props.totalCount / this.props.limit))
             .fill()
             .map((e, i) => i + 1);
@@ -23,7 +33,6 @@ class Paginator extends Component {
 
     filterPages(array, n) {
         if (array.length <= 10) {
-
             this.setState({ shrinked: true, pages: array});
         }
 
@@ -39,17 +48,34 @@ class Paginator extends Component {
             left = array.length - 2 * offset;
         }
 
-        this.setState({ shrinked: false, pages: array.slice(left, right)});
+        this.setState({ shrinked: false, pages: array.slice(left, right), page: n});
     }
 
     render() {
         const pagesArray = this.state.pages;
+        const page = this.props.page;
         return (
           <div className='tpa-lastbox-paginator'>
-            <div className='tpa-paginator'>
-              <a href='#' className='tpa-paginator-item -prev'>
+            {
+              pagesArray ?
+              <div className='tpa-paginator'>
+              <Link to={`${this.props.route}${page - 1}`} className='tpa-paginator-item -prev'>
                 <i className='tpa-icon -chevron-left'></i>
-              </a>
+              </Link>
+
+              {
+                page >= 5 && !this.state.shrinked ?
+                <Link to={`${this.props.route}1`} className='tpa-paginator-item'>1</Link>
+                : null
+              }
+
+              <span>{pagesArray}</span>
+
+              {
+                page > 5 && !this.state.shrinked ?
+                <span className='tpa-paginator-item -dots'>...</span>
+                : null
+              }
 
               {
                 pagesArray ? 
@@ -58,10 +84,25 @@ class Paginator extends Component {
                 }) 
                 : null
               }
-              <a href='#' className='tpa-paginator-item -next'>
+
+              {
+                page >= pagesArray.length - 4 && this.state.shrinked ?
+                null
+                : <span className='tpa-paginator-item -dots'>...</span>
+              }
+
+              {
+                  !this.state.shrinked ?
+                  <Link className='tpa-paginator-item' to={`${this.props.route}${pagesArray.length}`}>{Math.ceil(this.props.totalCount/this.props.limit)}</Link>
+                  : null
+              }
+
+              <Link to={`${this.props.route}${page + 1}`} className='tpa-paginator-item -next'>
                 <i className='tpa-icon -chevron-right'></i>
-              </a>
+              </Link>
             </div>
+              : null
+            }
           </div>
         )
     }
@@ -70,7 +111,8 @@ class Paginator extends Component {
 Paginator.propTypes = {
     totalCount: PropTypes.number.isRequired,
     limit: PropTypes.number.isRequired,
-    route: PropTypes.string.isRequired
+    route: PropTypes.string.isRequired,
+    page: PropTypes.number.isRequired
 };
 
 export default Paginator;

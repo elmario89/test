@@ -52,6 +52,7 @@ class Winners extends Component {
                           totalCount={this.state.totalCount}
                           limit={this.winnersLimit}
                           route='/winners/'
+                          page={parseFloat(this.props.match.params.page)}
                         /> 
                         : null
                       }
